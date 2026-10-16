@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#b7c4ff", "inverse-primary": "#2151da", "on-tertiary-container": "#c7d5f3", "surface-container-highest": "#2d3449", "tertiary-fixed": "#d6e3ff", "error-container": "#93000a", "error": "#ffb4ab", "tertiary": "#b9c7e4", "secondary-fixed": "#b3ebff", "primary-fixed-dim": "#b7c4ff", "on-background": "#dae2fd", "surface-container-lowest": "#060e20", "surface-bright": "#31394d", "primary-container": "#1d4ed8", "on-primary-container": "#cad3ff", "on-tertiary-fixed": "#0d1c32", "secondary-container": "#00b2d6", "surface-container": "#171f33", "on-error-container": "#ffdad6", "surface-container-high": "#222a3d", "on-tertiary-fixed-variant": "#39475f", "primary": "#b7c4ff", "on-tertiary": "#233148", "outline-variant": "#434655", "on-primary-fixed-variant": "#0039b5", "secondary-fixed-dim": "#4cd6fb", "on-error": "#690005", "background": "#0b1326", "primary-fixed": "#dce1ff", "on-surface": "#dae2fd", "surface-dim": "#0b1326", "on-secondary-fixed-variant": "#004e5f", "secondary": "#4cd6fb", "outline": "#8e90a0", "surface-container-low": "#131b2e", "on-secondary-container": "#003f4e", "on-surface-variant": "#c4c5d7", "surface-variant": "#2d3449", "on-secondary-fixed": "#001f27", "inverse-on-surface": "#283044", "tertiary-fixed-dim": "#b9c7e4", "inverse-surface": "#dae2fd", "on-primary": "#002682", "on-primary-fixed": "#001551", "on-secondary": "#003642", "surface": "#0b1326", "tertiary-container": "#4f5c75" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { "space-xl": "2rem", gutter: "1rem", margin: "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem" }, fontFamily: { "headline-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#0b1326;color:#dae2fd;-webkit-tap-highlight-color:transparent;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-secondary selection:text-on-secondary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary shadow-[0_4px_16px_rgba(0,0,0,0.12)]"><span class="material-symbols-outlined text-[24px]">point_of_sale</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">GANIMEDES</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-secondary/10 text-secondary leading-none uppercase">POS</span></div><div class="flex items-center gap-1.5 mt-0.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="font-label-md text-label-md text-on-surface-variant font-normal leading-none">Sucursal Central</span></div></div></div><div class="flex items-center gap-space-sm"><button aria-label="Estado de Red" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container text-on-surface-variant active:scale-95 transition-transform"><span class="material-symbols-outlined text-[20px] text-secondary">cloud_done</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VvXjy9YWxuIczQPSnezLgEB2K3Rhs5FROio1q7PYg75wJbwVcxIcv8U-UZ1G5lO8OuOAhlaMl_kAX7F5yT507Jr93xitWl3osCRC3V3-NCSfZpIoRmN0g8ePgMS8nFHHOEk2t90h8K41q5wYb9GxNuypzmOhfezeUb6_M5BKIfh5wSKcBb1lw8lXaD7MLrZdge4ZFeWmik8geyo7pTZdkJR4L2WQPDygPgzLy_aOajLx8WnPrw0W3_tdToA1K7ZyuRgBQsZJjf2i4"/></div></div></header><main class="flex-1 flex flex-col w-full pt-16 pb-28 bg-surface px-margin"><div class="flex flex-col w-full gap-space-md">
+<!-- Card Principal de Estado de Turno con Acentos Geométricos -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
+<!-- Visual Watermark inspirado en nodos hiperconectados -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 opacity-10 pointer-events-none text-secondary">
+<svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 100 100">
+<polygon points="50,15 85,35 85,75 50,95 15,75 15,35" stroke="currentColor"></polygon>
+<circle cx="50" cy="15" fill="currentColor" r="5"></circle>
+<circle cx="85" cy="35" fill="currentColor" r="5"></circle>
+<circle cx="85" cy="75" fill="currentColor" r="5"></circle>
+<circle cx="50" cy="95" fill="currentColor" r="5"></circle>
+<circle cx="15" cy="75" fill="currentColor" r="5"></circle>
+<circle cx="15" cy="35" fill="currentColor" r="5"></circle>
+<rect fill="currentColor" height="16" width="16" x="42" y="42"></rect>
+</svg>
+</div>
+<!-- Header Turno & Operador -->
+<div class="flex items-start justify-between gap-space-sm relative z-10">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+            Caja Abierta
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Turno Matutino</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Corte y Arqueo Operativo</h2>
+</div>
+<div class="flex items-center gap-2 bg-surface-container px-2.5 py-1.5 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+<span class="font-label-md text-label-md text-on-surface">Carlos M.</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mt-space-md pt-space-xs relative z-10">
+<div class="flex flex-col bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Apertura</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-tertiary">schedule</span>
+<span class="font-label-md text-label-md text-on-surface">Hoy 08:30 AM</span>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Fondo Inicial</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">savings</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">$1,500.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Resumen Métricas y Ventas -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Ventas Totales -->
+<div class="flex flex-col bg-surface-container rounded-xl p-space-md shadow-[0_4px_16px_rgba(0,0,0,0.15)] relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ventas Turno</span>
+<span class="p-1 rounded-md bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1.5 leading-none">$8,450.00</span>
+<div class="flex items-center gap-1 mt-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary">24 tickets emitidos</span>
+</div>
+</div>
+<!-- Efectivo Esperado -->
+<div class="flex flex-col bg-surface-container rounded-xl p-space-md shadow-[0_4px_16px_rgba(0,0,0,0.15)] relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Efectivo en Gaveta</span>
+<span class="p-1 rounded-md bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-secondary font-bold mt-1.5 leading-none">$5,700.00</span>
+<div class="flex items-center gap-1 mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fondo + Ventas Cash</span>
+</div>
+</div>
+</div>
+<!-- Desglose por Método de Pago -->
+<div class="flex flex-col bg-surface-container rounded-xl p-space-md shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Desglose de Ingresos</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Canales</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Efectivo -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Efectivo Turno</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14 pagos</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$4,200.00</span>
+</div>
+<!-- Tarjeta -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Tarjeta / Terminal POS</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8 cobros</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$3,650.00</span>
+</div>
+<!-- SPEI -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Transferencia SPEI</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 transferencias</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$600.00</span>
+</div>
+</div>
+</div>
+<!-- Sección Interactiva: Arqueo y Conteo Físico -->
+<div class="flex flex-col bg-surface-container-high rounded-xl p-space-md shadow-[0_8px_32px_rgba(0,0,0,0.25)]">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">calculate</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Conteo Real en Caja</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-lowest text-secondary">Arqueo 5.3</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Ingresa el total en efectivo contado físicamente en la gaveta.</p>
+<!-- Input Display -->
+<div class="relative flex items-center rounded-xl bg-surface-container-lowest px-4 py-3 mb-space-sm">
+<span class="font-headline-lg text-headline-lg text-secondary mr-1.5 font-bold">$</span>
+<input class="w-full bg-transparent font-headline-lg text-headline-lg text-on-surface outline-none border-none p-0 focus:ring-0" id="countedInput" placeholder="0.00" step="10" type="number" value="5700.00"/>
+<button class="text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform p-1" id="clearInputBtn">
+<span class="material-symbols-outlined text-[20px]">backspace</span>
+</button>
+</div>
+<!-- Quick Denomination Adders -->
+<div class="grid grid-cols-5 gap-1.5 mb-space-md">
+<button class="h-10 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:bg-primary-container active:scale-95 transition-all" onclick="addCash(20)">+$20</button>
+<button class="h-10 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:bg-primary-container active:scale-95 transition-all" onclick="addCash(50)">+$50</button>
+<button class="h-10 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:bg-primary-container active:scale-95 transition-all" onclick="addCash(100)">+$100</button>
+<button class="h-10 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:bg-primary-container active:scale-95 transition-all" onclick="addCash(200)">+$200</button>
+<button class="h-10 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:bg-primary-container active:scale-95 transition-all" onclick="addCash(500)">+$500</button>
+</div>
+<!-- Estado de Diferencia Dinámico -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest transition-colors mb-space-md" id="diffBadge">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary" id="diffIcon">check_circle</span>
+<span class="font-label-lg text-label-lg text-on-surface" id="diffStatus">Caja Cuadrada Exacta</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold" id="diffAmount">$0.00</span>
+</div>
+<!-- Observaciones -->
+<div class="flex flex-col gap-1.5 mb-space-md">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="corteNotes">Notas u Observaciones del Corte</label>
+<input class="h-11 rounded-lg bg-surface-container-lowest px-3 font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none" id="corteNotes" placeholder="Ej. Cambio dejado en billetes de $50..." type="text"/>
+</div>
+<!-- Primary Action Button -->
+<button class="h-12 w-full rounded-xl bg-gradient-to-r from-primary-container via-secondary-container to-secondary text-surface-container-lowest font-headline-sm text-headline-sm flex items-center justify-center gap-2 active:scale-98 transition-transform shadow-[0_4px_20px_rgba(76,214,251,0.3)]" id="btnFinalizarCorte">
+<span class="material-symbols-outlined text-[22px]">lock_clock</span>
+<span>Realizar Corte y Cierre de Caja</span>
+</button>
+</div>
+<!-- Botones de Acción Secundaria -->
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="h-11 rounded-xl bg-surface-container flex items-center justify-center gap-2 text-on-surface font-label-md text-label-md active:bg-surface-container-high transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">print</span>
+<span>Arqueo (58mm)</span>
+</button>
+<button class="h-11 rounded-xl bg-surface-container flex items-center justify-center gap-2 text-on-surface font-label-md text-label-md active:bg-surface-container-high transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">sync_alt</span>
+<span>Retiro / Entrada</span>
+</button>
+</div>
+<!-- Últimos Movimientos de Caja -->
+<div class="flex flex-col bg-surface-container rounded-xl p-space-md shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Movimientos Recientes</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Últimos 3</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Corte Fade + Barba Ritual</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ticket #1024 • 12:42 PM (Efectivo)</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg text-secondary font-semibold">+$480.00</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Pomada Mate + Afeitado</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ticket #1023 • 12:15 PM (Tarjeta)</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">+$560.00</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">remove_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Retiro Menor (Insumos Cuello)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gasto Gaveta • 11:20 AM</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg text-error font-semibold">-$150.00</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initCorteState() {
+    const expectedCash = 5700.00;
+    const input = document.getElementById('countedInput');
+    const diffStatus = document.getElementById('diffStatus');
+    const diffAmount = document.getElementById('diffAmount');
+    const diffIcon = document.getElementById('diffIcon');
+    const clearBtn = document.getElementById('clearInputBtn');
+    const btnCierre = document.getElementById('btnFinalizarCorte');
+
+    function updateDifference() {
+      const val = parseFloat(input.value) || 0;
+      const diff = val - expectedCash;
+
+      if (Math.abs(diff) < 0.01) {
+        diffStatus.textContent = 'Caja Cuadrada Exacta';
+        diffStatus.className = 'font-label-lg text-label-lg text-on-surface';
+        diffAmount.textContent = '$0.00';
+        diffAmount.className = 'font-headline-sm text-headline-sm text-secondary font-bold';
+        diffIcon.textContent = 'check_circle';
+        diffIcon.className = 'material-symbols-outlined text-[20px] text-secondary';
+      } else if (diff > 0) {
+        diffStatus.textContent = 'Sobrante en Efectivo';
+        diffStatus.className = 'font-label-lg text-label-lg text-secondary';
+        diffAmount.textContent = '+$' + diff.toFixed(2);
+        diffAmount.className = 'font-headline-sm text-headline-sm text-secondary font-bold';
+        diffIcon.textContent = 'arrow_upward';
+        diffIcon.className = 'material-symbols-outlined text-[20px] text-secondary';
+      } else {
+        diffStatus.textContent = 'Faltante en Efectivo';
+        diffStatus.className = 'font-label-lg text-label-lg text-error';
+        diffAmount.textContent = '-$' + Math.abs(diff).toFixed(2);
+        diffAmount.className = 'font-headline-sm text-headline-sm text-error font-bold';
+        diffIcon.textContent = 'warning';
+        diffIcon.className = 'material-symbols-outlined text-[20px] text-error';
+      }
+    }
+
+    window.addCash = function(amount) {
+      const current = parseFloat(input.value) || 0;
+      input.value = (current + amount).toFixed(2);
+      updateDifference();
+    };
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        input.value = '0.00';
+        updateDifference();
+      });
+    }
+
+    if (input) {
+      input.addEventListener('input', updateDifference);
+    }
+
+    if (btnCierre) {
+      btnCierre.addEventListener('click', () => {
+        const val = parseFloat(input.value) || 0;
+        const diff = val - expectedCash;
+        const msg = Math.abs(diff) < 0.01 
+          ? '¿Confirmar cierre de turno matutino? Caja cuadrada con $5,700.00 MXN en gaveta.' 
+          : `Atención: Existe una diferencia de $${diff.toFixed(2)} MXN. ¿Deseas autorizar el corte con esta discrepancia?`;
+        
+        if (confirm(msg)) {
+          btnCierre.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Procesando Corte...</span>';
+          setTimeout(() => {
+            alert('Corte de caja registrado e impreso exitosamente.');
+            btnCierre.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Corte Finalizado</span>';
+            btnCierre.classList.replace('from-primary-container', 'from-surface-container');
+          }, 900);
+        }
+      });
+    }
+
+    // Set tab highlight in navigation bar for "caja"
+    const navItem = document.querySelector('nav a[data-path="caja"]');
+    if (navItem) {
+      navItem.classList.add('text-secondary', 'bg-surface-container-highest', 'shadow-[0_4px_20px_rgba(76,214,251,0.2)]');
+      navItem.classList.remove('text-on-surface-variant');
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe px-margin pointer-events-none" data-active-classes="text-secondary bg-surface-container-highest shadow-[0_4px_20px_rgba(76,214,251,0.2)]"><div class="pointer-events-auto mx-auto max-w-md mb-3 bg-surface-container/90 backdrop-blur-xl rounded-full p-1.5 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.4)]"><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm mt-0.5">Inicio</span></a><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="pos" href="#"><span class="material-symbols-outlined text-[22px]">shopping_cart_checkout</span><span class="font-label-sm text-label-sm mt-0.5">POS</span></a><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="inventario" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-sm text-label-sm mt-0.5">Inventario</span></a><a aria-current="page" class="flex-1 h-12 flex flex-col items-center justify-center rounded-full active:scale-95 transition-all text-secondary bg-surface-container-highest shadow-[0_4px_20px_rgba(76,214,251,0.2)]" data-path="caja" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-label-sm mt-0.5">Caja</span></a><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="ajustes" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-sm text-label-sm mt-0.5">Ajustes</span></a></div></nav></body></html>

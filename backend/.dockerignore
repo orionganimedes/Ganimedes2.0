@@ -1,0 +1,18 @@
+# Datos locales: NO van dentro de la imagen (se persisten en un volumen)
+pb_data/
+
+# Secretos y configuración local
+.env
+.env.*
+
+# Documentación y control de versiones
+README.md
+CHANGELOG.md
+LICENSE.md
+.git/
+.gitignore
+
+# Herramientas de desarrollo
+run.sh
+node_modules/
+*.zip

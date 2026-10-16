@@ -1,0 +1,27 @@
+# Secretos
+.env
+.env.*
+!.env.example
+
+# Datos locales
+backend/pb_data/
+*.db
+*.sqlite*
+
+# Dependencias y builds
+node_modules/
+.venv/
+venv/
+__pycache__/
+build/
+dist/
+.dart_tool/
+.gradle/
+
+# Otros
+repomix-output.xml
+*.jks
+
+# Rust y binarios
+target/
+backend/pocketbase

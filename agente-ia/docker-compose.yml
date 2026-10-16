@@ -1,0 +1,16 @@
+services:
+  agent:
+    build: .
+    image: ganimedes-agent:latest
+    container_name: ganimedes-agent
+    restart: unless-stopped
+    # network_mode host: el agente alcanza Ollama (11434) y PocketBase (8090)
+    # que corren como servicios del host (systemd) en el VPS.
+    network_mode: host
+    env_file: .env
+    volumes:
+      - agent_data:/app/data
+
+volumes:
+  agent_data:
+    name: ganimedes_agent_data

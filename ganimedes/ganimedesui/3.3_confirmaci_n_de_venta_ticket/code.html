@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#b7c4ff", "inverse-primary": "#2151da", "on-tertiary-container": "#c7d5f3", "surface-container-highest": "#2d3449", "tertiary-fixed": "#d6e3ff", "error-container": "#93000a", "error": "#ffb4ab", "tertiary": "#b9c7e4", "secondary-fixed": "#b3ebff", "primary-fixed-dim": "#b7c4ff", "on-background": "#dae2fd", "surface-container-lowest": "#060e20", "surface-bright": "#31394d", "primary-container": "#1d4ed8", "on-primary-container": "#cad3ff", "on-tertiary-fixed": "#0d1c32", "secondary-container": "#00b2d6", "surface-container": "#171f33", "on-error-container": "#ffdad6", "surface-container-high": "#222a3d", "on-tertiary-fixed-variant": "#39475f", "primary": "#b7c4ff", "on-tertiary": "#233148", "outline-variant": "#434655", "on-primary-fixed-variant": "#0039b5", "secondary-fixed-dim": "#4cd6fb", "on-error": "#690005", "background": "#0b1326", "primary-fixed": "#dce1ff", "on-surface": "#dae2fd", "surface-dim": "#0b1326", "on-secondary-fixed-variant": "#004e5f", "secondary": "#4cd6fb", "outline": "#8e90a0", "surface-container-low": "#131b2e", "on-secondary-container": "#003f4e", "on-surface-variant": "#c4c5d7", "surface-variant": "#2d3449", "on-secondary-fixed": "#001f27", "inverse-on-surface": "#283044", "tertiary-fixed-dim": "#b9c7e4", "inverse-surface": "#dae2fd", "on-primary": "#002682", "on-primary-fixed": "#001551", "on-secondary": "#003642", "surface": "#0b1326", "tertiary-container": "#4f5c75" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { "space-xl": "2rem", gutter: "1rem", margin: "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem" }, fontFamily: { "headline-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#0b1326;color:#dae2fd;-webkit-tap-highlight-color:transparent;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-secondary selection:text-on-secondary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary shadow-[0_4px_16px_rgba(0,0,0,0.12)]"><span class="material-symbols-outlined text-[24px]">point_of_sale</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">GANIMEDES</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-secondary/10 text-secondary leading-none uppercase">POS</span></div><div class="flex items-center gap-1.5 mt-0.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="font-label-md text-label-md text-on-surface-variant font-normal leading-none">Sucursal Central</span></div></div></div><div class="flex items-center gap-space-sm"><button aria-label="Estado de Red" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container text-on-surface-variant active:scale-95 transition-transform"><span class="material-symbols-outlined text-[20px] text-secondary">cloud_done</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VvXjy9YWxuIczQPSnezLgEB2K3Rhs5FROio1q7PYg75wJbwVcxIcv8U-UZ1G5lO8OuOAhlaMl_kAX7F5yT507Jr93xitWl3osCRC3V3-NCSfZpIoRmN0g8ePgMS8nFHHOEk2t90h8K41q5wYb9GxNuypzmOhfezeUb6_M5BKIfh5wSKcBb1lw8lXaD7MLrZdge4ZFeWmik8geyo7pTZdkJR4L2WQPDygPgzLy_aOajLx8WnPrw0W3_tdToA1K7ZyuRgBQsZJjf2i4"/></div></div></header><main class="flex-1 flex flex-col w-full pt-16 pb-28 bg-surface px-margin"><div class="flex flex-col w-full gap-space-md">
+<!-- Status & Celebration Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md shadow-xl flex flex-col items-center text-center">
+<!-- Ambient success glow -->
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-48 bg-secondary/15 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Animated Badge Circle with Cyber Mesh Icon -->
+<div class="relative w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-[0_0_24px_rgba(76,214,251,0.35)] mb-space-sm">
+<svg class="absolute inset-0 w-full h-full text-secondary opacity-40 animate-spin" style="animation-duration: 20s;" viewbox="0 0 100 100">
+<polygon fill="none" points="50,6 88,28 88,72 50,94 12,72 12,28" stroke="currentColor" stroke-dasharray="6,4" stroke-width="2"></polygon>
+</svg>
+<span class="material-symbols-outlined text-[34px] text-secondary font-bold">verified</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Cobro Completado</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Folio: <span class="font-label-md text-label-md text-secondary">#TK-1025</span> • Hoy, 12:48 PM</p>
+<!-- Operational State Badges -->
+<div class="flex flex-wrap items-center justify-center gap-space-xs mt-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+        Gaveta Abierta
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-emerald-400 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">sync_saved_locally</span>
+        PocketBase OK
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">print</span>
+        Impresora Térmica 80mm
+      </span>
+</div>
+</div>
+<!-- Digital Receipt Card -->
+<div class="relative bg-surface-container rounded-xl shadow-xl overflow-hidden">
+<!-- Top Cutout Deco -->
+<div class="w-full h-1.5 bg-gradient-to-r from-primary-container via-secondary to-primary-container"></div>
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Merchant Header -->
+<div class="text-center flex flex-col items-center">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">content_cut</span>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">GANIMEDES BARBER &amp; POS</span>
+</div>
+<span class="font-label-md text-label-md text-secondary mt-0.5">Sucursal Central • Flagship Terminal 01</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">RFC: GAN-230914-8A2 • Tel: (55) 8901-4450</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Av. Insurgentes Sur 1450, Col. del Valle, CDMX</span>
+</div>
+<!-- Service Station & Client Context -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Especialista</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">badge</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Carlos Mendoza</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sillón Master 01</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Cliente</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">person</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Alejandro Peña</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+52 55 1234 5678</span>
+</div>
+</div>
+<!-- Itemized Table -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex justify-between items-center pb-1 font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Concepto / SKU</span>
+<span>Importe</span>
+</div>
+<!-- Line item 1 -->
+<div class="flex justify-between items-start">
+<div class="flex flex-col max-w-[70%]">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">1x Fade Clásico</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Navaja, toalla caliente y tónico</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">$280.00</span>
+</div>
+<!-- Line item 2 -->
+<div class="flex justify-between items-start">
+<div class="flex flex-col max-w-[70%]">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">1x Pomada Matte 4oz</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fijación fuerte / Acabado natural</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">$320.00</span>
+</div>
+<!-- Line item 3 -->
+<div class="flex justify-between items-start">
+<div class="flex flex-col max-w-[70%]">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">1x Cold Brew Artesanal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tostado Chiapas de Origen (250ml)</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">$50.00</span>
+</div>
+</div>
+<!-- Perforated separator effect -->
+<div class="relative py-2 flex items-center justify-between">
+<div class="w-full flex justify-between gap-1 overflow-hidden opacity-30">
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+<div class="w-2 h-0.5 bg-outline-variant flex-shrink-0"></div>
+</div>
+</div>
+<!-- Financial Totals -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>$650.00 MXN</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span>Propina Barbero</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm">10%</span>
+</div>
+<span class="text-secondary font-label-md text-label-md">+$68.00 MXN</span>
+</div>
+<!-- Grand Total Highlight -->
+<div class="mt-space-xs p-space-sm rounded-xl bg-surface-container-highest flex items-center justify-between shadow-inner">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Total Pagado</span>
+<span class="font-label-md text-label-md text-on-surface-variant">IVA Incluido</span>
+</div>
+<span class="font-headline-xl text-headline-xl text-secondary font-bold tracking-tight">$718.00 <span class="font-label-md text-label-md text-on-surface">MXN</span></span>
+</div>
+<!-- Cash Tender Breakdown -->
+<div class="grid grid-cols-2 gap-space-xs mt-space-xs">
+<div class="flex flex-col bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Efectivo Recibido</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">$1,000.00</span>
+</div>
+<div class="flex flex-col bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cambio Entregado</span>
+<span class="font-headline-sm text-headline-sm text-emerald-400 mt-0.5">$282.00</span>
+</div>
+</div>
+</div>
+<!-- Fiscal Verification / Cryptographic Signature Module -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl">
+<!-- Generative Mock QR for Instant Mobile Scan -->
+<div class="w-16 h-16 bg-surface-container-highest p-1 rounded-lg flex items-center justify-center flex-shrink-0">
+<svg class="w-14 h-14 text-secondary" fill="currentColor" viewbox="0 0 44 44">
+<rect fill="currentColor" height="14" rx="2" width="14" x="0" y="0"></rect>
+<rect fill="#060e20" height="8" width="8" x="3" y="3"></rect>
+<rect fill="currentColor" height="4" width="4" x="5" y="5"></rect>
+<rect fill="currentColor" height="14" rx="2" width="14" x="30" y="0"></rect>
+<rect fill="#060e20" height="8" width="8" x="33" y="3"></rect>
+<rect fill="currentColor" height="4" width="4" x="35" y="5"></rect>
+<rect fill="currentColor" height="14" rx="2" width="14" x="0" y="30"></rect>
+<rect fill="#060e20" height="8" width="8" x="3" y="33"></rect>
+<rect fill="currentColor" height="4" width="4" x="5" y="35"></rect>
+<rect height="4" width="8" x="18" y="4"></rect>
+<rect height="8" width="4" x="18" y="12"></rect>
+<rect height="4" width="6" x="26" y="16"></rect>
+<rect height="8" width="4" x="20" y="24"></rect>
+<rect height="6" width="6" x="28" y="28"></rect>
+<rect height="8" width="4" x="38" y="20"></rect>
+<rect height="4" width="8" x="16" y="36"></rect>
+<rect height="4" width="6" x="36" y="38"></rect>
+</svg>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Certificado CFDI • AES-256</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Sello: 9e3a7b...84fc2d</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Escanea para descargar comprobante PDF</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Share & Dispatch Actions -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">Enviar Comprobante</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-highest px-2 py-0.5 rounded-full">Cliente Registrado</span>
+</div>
+<!-- WhatsApp Fast Trigger with Pre-filled Chip -->
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 flex items-center gap-space-xs bg-surface-container-highest px-3 py-2 rounded-xl">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]">chat</span>
+<span class="font-body-md text-body-md text-on-surface truncate">+52 55 1234 5678</span>
+</div>
+<button class="h-11 px-4 bg-emerald-500/20 text-emerald-300 rounded-xl font-label-md text-label-md flex items-center gap-1 active:scale-95 transition-transform" id="btn-whatsapp">
+<span>Enviar</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<!-- Multi-Action Bar: Email & Reprint -->
+<div class="grid grid-cols-2 gap-space-xs mt-1">
+<button class="h-11 rounded-xl bg-surface-container-highest text-on-surface flex items-center justify-center gap-1.5 font-label-md text-label-md active:scale-95 transition-transform" id="btn-email">
+<span class="material-symbols-outlined text-[18px] text-tertiary">mail</span>
+<span>Por Correo</span>
+</button>
+<button class="h-11 rounded-xl bg-surface-container-highest text-on-surface flex items-center justify-center gap-1.5 font-label-md text-label-md active:scale-95 transition-transform" id="btn-print">
+<span class="material-symbols-outlined text-[18px] text-secondary">print</span>
+<span>Reimprimir</span>
+</button>
+</div>
+<!-- Dispatch Notification toast container (in-DOM feedback) -->
+<div class="hidden text-center py-1 text-emerald-400 font-label-sm text-label-sm animate-pulse" id="dispatch-toast">
+      ¡Comprobante enviado exitosamente a Alejandro Peña!
+    </div>
+</div>
+<!-- Primary Bottom Navigation / POS Cycle Reset -->
+<div class="flex flex-col gap-space-xs pt-1">
+<!-- Big Primary New Sale Button -->
+<button class="w-full h-14 rounded-xl bg-gradient-to-r from-primary-container via-secondary-container to-secondary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-space-sm shadow-[0_8px_24px_rgba(0,178,214,0.35)] active:scale-98 transition-all" id="btn-new-sale">
+<span class="material-symbols-outlined text-[24px]">point_of_sale</span>
+<span>Iniciar Nueva Venta</span>
+</button>
+<!-- Secondary Navigation -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="h-11 rounded-xl bg-surface-container-high text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Ver en Historial</span>
+</button>
+<button class="h-11 rounded-xl bg-surface-container-high text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span>Volver a Inicio</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for POS delight
+  const btnWhatsapp = document.getElementById('btn-whatsapp');
+  const btnEmail = document.getElementById('btn-email');
+  const btnPrint = document.getElementById('btn-print');
+  const btnNewSale = document.getElementById('btn-new-sale');
+  const toast = document.getElementById('dispatch-toast');
+
+  function showFeedback(msg) {
+    if (toast) {
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3000);
+    }
+  }
+
+  if (btnWhatsapp) {
+    btnWhatsapp.addEventListener('click', () => {
+      showFeedback('✓ Ticket enviado por WhatsApp al +52 55 1234 5678');
+    });
+  }
+
+  if (btnEmail) {
+    btnEmail.addEventListener('click', () => {
+      showFeedback('✓ Enviando PDF fiscal a alejandro.pena@email.com');
+    });
+  }
+
+  if (btnPrint) {
+    btnPrint.addEventListener('click', () => {
+      showFeedback('🖨 Imprimiendo copia en Térmica Bluetooth (80mm)...');
+    });
+  }
+
+  if (btnNewSale) {
+    btnNewSale.addEventListener('click', () => {
+      const posTab = document.querySelector('a[data-path="pos"]');
+      if (posTab) {
+        posTab.click();
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe px-margin pointer-events-none" data-active-classes="text-secondary bg-surface-container-highest shadow-[0_4px_20px_rgba(76,214,251,0.2)]"><div class="pointer-events-auto mx-auto max-w-md mb-3 bg-surface-container/90 backdrop-blur-xl rounded-full p-1.5 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.4)]"><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm mt-0.5">Inicio</span></a><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="pos" href="#"><span class="material-symbols-outlined text-[22px]">shopping_cart_checkout</span><span class="font-label-sm text-label-sm mt-0.5">POS</span></a><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="inventario" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-sm text-label-sm mt-0.5">Inventario</span></a><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="caja" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-label-sm mt-0.5">Caja</span></a><a class="flex-1 h-12 flex flex-col items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="ajustes" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-sm text-label-sm mt-0.5">Ajustes</span></a></div></nav></body></html>

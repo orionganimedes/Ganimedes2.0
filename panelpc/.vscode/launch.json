@@ -1,0 +1,39 @@
+{
+    // F5 compila y lanza la app en una terminal integrada.
+    //
+    // Usa "node-terminal" para no depender de un depurador externo: funciona
+    // sin instalar nada. Si algún día quieres puntos de ruptura, instala la
+    // extensión CodeLLDB (`code --install-extension vadimcn.vscode-lldb`) y
+    // cambia "type": "node-terminal" por "type": "lldb" quitando "command".
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "POS: compilar y lanzar (F5)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pkill -x ganimedes-pos 2>/dev/null; cargo run --release",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "POS: lanzar en dev (iterar rápido)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pkill -x ganimedes-pos 2>/dev/null; cargo run",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "POS: lanzar en modo kiosco (sin login)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pkill -x ganimedes-pos 2>/dev/null; GANIMEDES_AUTOLOGIN=1 cargo run",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "POS: vista previa del login",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "cargo run -p ganimedes-login-preview",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

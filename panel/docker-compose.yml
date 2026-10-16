@@ -1,0 +1,8 @@
+services:
+  panel:
+    build: .
+    image: ganimedes-panel:latest
+    container_name: ganimedes-panel
+    restart: unless-stopped
+    ports:
+      - "80:80"

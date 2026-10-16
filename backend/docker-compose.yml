@@ -1,0 +1,34 @@
+services:
+  pocketbase:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ganimedes-backend:latest
+    container_name: ganimedes-pocketbase
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    environment:
+      # Superusuario bootstrap (se crea/actualiza en el primer arranque)
+      PB_ADMIN_EMAIL: ${PB_ADMIN_EMAIL:-admin@ganimedes.com}
+      PB_ADMIN_PASSWORD: ${PB_ADMIN_PASSWORD:-Ganimedes2026!}
+      # Zona horaria
+      TZ: ${TZ:-America/Mexico_City}
+      # (Producción) Clave de 32 caracteres para cifrar configuraciones sensibles.
+      # Descomenta y define PB_ENCRYPTION_KEY en tu archivo .env
+      # PB_ENCRYPTION_KEY: ${PB_ENCRYPTION_KEY:-}
+    volumes:
+      - pb_data:/app/pb_data
+      # --- Desarrollo (opcional): hot-reload de migraciones y hooks ---
+      # - ./pb_migrations:/app/pb_migrations:ro
+      # - ./pb_hooks:/app/pb_hooks:ro
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8090/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  pb_data:
+    name: ganimedes_pb_data

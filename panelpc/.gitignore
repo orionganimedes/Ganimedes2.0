@@ -1,0 +1,41 @@
+# ---- Rust ----
+/target/
+**/*.rs.bk
+*.pdb
+
+# ---- Entorno local ----
+.env
+.env.local
+
+# ---- Empaquetado / distribución ----
+/dist/*
+!/dist/.gitkeep
+*.AppImage
+*.deb
+*.rpm
+*.msi
+
+# ---- Artefactos de análisis / IA ----
+repomix-output.xml
+**/repomix-output.xml
+
+# ---- Editores / SO ----
+.idea/
+*.iml
+*.ipr
+*.iws
+*.swp
+*~
+.DS_Store
+*:Zone.Identifier
+
+# VS Code: se versionan las tareas y el lanzador (útiles para todo el equipo),
+# pero no la configuración personal de cada uno.
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# ---- Temporales del entorno de agentes ----
+.dsh-tmp/

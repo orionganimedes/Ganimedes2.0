@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#b7c4ff", "inverse-primary": "#2151da", "on-tertiary-container": "#c7d5f3", "surface-container-highest": "#2d3449", "tertiary-fixed": "#d6e3ff", "error-container": "#93000a", "error": "#ffb4ab", "tertiary": "#b9c7e4", "secondary-fixed": "#b3ebff", "primary-fixed-dim": "#b7c4ff", "on-background": "#dae2fd", "surface-container-lowest": "#060e20", "surface-bright": "#31394d", "primary-container": "#1d4ed8", "on-primary-container": "#cad3ff", "on-tertiary-fixed": "#0d1c32", "secondary-container": "#00b2d6", "surface-container": "#171f33", "on-error-container": "#ffdad6", "surface-container-high": "#222a3d", "on-tertiary-fixed-variant": "#39475f", "primary": "#b7c4ff", "on-tertiary": "#233148", "outline-variant": "#434655", "on-primary-fixed-variant": "#0039b5", "secondary-fixed-dim": "#4cd6fb", "on-error": "#690005", "background": "#0b1326", "primary-fixed": "#dce1ff", "on-surface": "#dae2fd", "surface-dim": "#0b1326", "on-secondary-fixed-variant": "#004e5f", "secondary": "#4cd6fb", "outline": "#8e90a0", "surface-container-low": "#131b2e", "on-secondary-container": "#003f4e", "on-surface-variant": "#c4c5d7", "surface-variant": "#2d3449", "on-secondary-fixed": "#001f27", "inverse-on-surface": "#283044", "tertiary-fixed-dim": "#b9c7e4", "inverse-surface": "#dae2fd", "on-primary": "#002682", "on-primary-fixed": "#001551", "on-secondary": "#003642", "surface": "#0b1326", "tertiary-container": "#4f5c75" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { "space-xl": "2rem", gutter: "1rem", margin: "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem" }, fontFamily: { "headline-md": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#0b1326;color:#dae2fd;-webkit-tap-highlight-color:transparent;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-secondary selection:text-on-secondary"><main class="flex-1 flex flex-col w-full pt-safe pb-safe bg-surface px-margin"><div class="flex flex-col w-full max-w-md mx-auto select-none pb-6">
+<!-- Top Node Status & Terminal Info -->
+<div class="flex items-center justify-between py-2 px-1">
+<div class="flex items-center space-x-2">
+<div class="relative flex items-center justify-center w-6 h-6 rounded-full bg-surface-container-high">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping absolute opacity-75"></span>
+<span class="w-2 h-2 rounded-full bg-secondary relative"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Terminal Node 01</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Online • Sincronizado</span>
+</div>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">encrypted</span>
+<span class="font-label-sm text-label-sm font-medium">AES-256</span>
+</div>
+</div>
+<!-- Barbers / Staff Horizontal Carousel -->
+<div class="mt-3">
+<div class="flex items-center justify-between px-1 mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Operador en Turno</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">sensors</span> 4 activos
+      </span>
+</div>
+<div class="flex space-x-3 overflow-x-auto pb-2 pt-1 no-scrollbar scroll-smooth" id="barberCarousel">
+<!-- Active Barber -->
+<button class="barber-select-btn flex-shrink-0 flex flex-col items-center p-2 rounded-xl bg-surface-container-high relative transition-all transform active:scale-95 text-left" data-name="Carlos Mendoza" data-role="Caja Principal • Barber Master" type="button">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow-md" data-alt="Close up professional portrait of a stylish male barber with trimmed beard and modern fade haircut in dim dark blue barbershop lighting with soft cyan backlight highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuUdURONZPEuId2TxH5tZoScGCQ4HTKMWkDfbmYw4ayK3jfIQPtvXW6mFVt-OOq8BmULqpaJT-XmohoHXdTHl8iWpjKXmD2zbFkmjfG27onGwwdp-B3BesqIyGUzLpdVm_NH9TuU1m3N8iRm70O7lyFZykj2hEoxQ1akV0NbeJhXeaY95qmjlkWA-IU7bODVDUoqDSBRxRNkfmhrozvfSxrkduo4TbdIV-26lmEh0cgGvxXBb4OF66lA"/>
+<span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-surface-container-lowest font-bold text-[9px] shadow">
+<span class="material-symbols-outlined text-[12px]">check</span>
+</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface mt-1.5 font-semibold truncate w-16 text-center">Carlos (Tú)</span>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded-full bg-secondary/15 text-secondary font-label-sm text-[9px] font-bold">Admin</span>
+</button>
+<!-- Barber 2 -->
+<button class="barber-select-btn flex-shrink-0 flex flex-col items-center p-2 rounded-xl bg-surface-container transition-all transform active:scale-95 opacity-70 hover:opacity-100" data-name="Mateo Style" data-role="Sillón 02 • Estilista Senior" type="button">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Headshot of a confident young urban male barber with modern buzz cut and subtle ear piercing in high-contrast neon cyan and navy ambient studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8NN4nJzqocTYeoGzzAuJ6agaFxHOW7-lnEgseQz8hM8t0Mtc-vuT3D3rJ2aL7gqbF4MnqH3s9t3GYjp_BXKXwBPQPo_IoHe5x0jd7RLX-U9b60z-V9GSpzZQU-YC9F-VoCmDEsd1E3goVWQ-kPNgYnxV2vrfSUSwAcPFNf7mF_ZKc8q4W50iqXd1d6dssa60YIISlrtRgJ6vIToeK9Jvdm78x7B3wfFbMT3DV1xRBNJyYS7uVJmg68w"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium truncate w-16 text-center">Mateo S.</span>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[9px]">Sillón 2</span>
+</button>
+<!-- Barber 3 -->
+<button class="barber-select-btn flex-shrink-0 flex flex-col items-center p-2 rounded-xl bg-surface-container transition-all transform active:scale-95 opacity-70 hover:opacity-100" data-name="David Cortes" data-role="Sillón 03 • Especialista Barba" type="button">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of a seasoned Latin male barber with groomed moustache, wearing modern work apron under sleek moody blue studio spotlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2waJGvMLaCDvyT_n1kpH4dfVNblefWtJM8moiu5UvUpfpQ4De25-VOXDMaNw2vvU9Wkb-H-QfwIXgaosAsqJn1XPplyKiOLLybkDqtUctB4muFQZ3u2zpx8S6e9lNjGWnkp83IXgP-id2YYqF9DYTYP96ZsEKizzjtBzIEskQS9pd5qE6jYqHoMn0--L6Dhm_AgcIiVexKglALVUlXA2NFOoz5ihZ9UBv5NxFcrcpHtvdVfADFF98ag"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium truncate w-16 text-center">David C.</span>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[9px]">Sillón 3</span>
+</button>
+<!-- Barber 4 -->
+<button class="barber-select-btn flex-shrink-0 flex flex-col items-center p-2 rounded-xl bg-surface-container transition-all transform active:scale-95 opacity-70 hover:opacity-100" data-name="Sofia Fade" data-role="Sillón 04 • Color &amp; Diseño" type="button">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Artistic profile portrait of a female barber with short textured crop hairstyle, sharp focus, cool cyberpunk rim lighting against dark slate background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIJIA_6x0jlHoTOVnOXx16eFc3hpagyMfVPhlVKjD10cAB1eljWUCCs3MJgm0-n2QZmg00O6uCmencJuSSDXGuLDJJx5BKa6DKAcyLgLjyTfS6T881NsmZ1WXH73CKts-lJOq3JQ1Y-tdyx1uoc9d0qHTwEjueAG_Oauw11NCZBCQW2ZVIuYEZHvhbP26M73TJL2bYHv1zKqRSQiOxirJDSFKxHZ_jPaH4YbYITdpvRYTXf0qpEFBN-A"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium truncate w-16 text-center">Sofia F.</span>
+<span class="inline-block mt-0.5 px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[9px]">Sillón 4</span>
+</button>
+</div>
+</div>
+<!-- Selected Operator Showcase Card -->
+<div class="mt-3 p-4 rounded-xl bg-surface-container flex items-center justify-between shadow-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-secondary/5 blur-xl pointer-events-none"></div>
+<div class="flex items-center space-x-3.5 z-10">
+<div class="relative flex items-center justify-center">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-primary to-secondary p-0.5 shadow-sm">
+<div class="w-full h-full bg-surface-container-lowest rounded-[10px] flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[24px]">point_of_sale</span>
+</div>
+</div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight" id="activeBarberName">Carlos Mendoza</h2>
+<p class="font-body-sm text-body-sm text-secondary font-medium" id="activeBarberRole">Caja Principal • Barber Master</p>
+</div>
+</div>
+<div class="flex flex-col items-end z-10">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">Turno A</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-1">Caja #01</span>
+</div>
+</div>
+<!-- Geometric Node Graphic (inspired by reference icon) & PIN Prompt -->
+<div class="mt-4 flex flex-col items-center text-center">
+<div class="relative w-14 h-14 flex items-center justify-center mb-1">
+<svg class="w-14 h-14 text-secondary drop-shadow-[0_0_8px_rgba(76,214,251,0.4)]" fill="none" viewbox="0 0 100 100">
+<!-- Outer Hex Ring Nodes -->
+<circle cx="50" cy="12" fill="currentColor" r="5"></circle>
+<circle cx="83" cy="31" fill="currentColor" r="5"></circle>
+<circle cx="83" cy="69" fill="currentColor" r="5"></circle>
+<circle cx="50" cy="88" fill="currentColor" r="5"></circle>
+<circle cx="17" cy="69" fill="currentColor" r="5"></circle>
+<circle cx="17" cy="31" fill="currentColor" r="5"></circle>
+<!-- Inner Web Lines -->
+<path d="M50 12 L83 31 L83 69 L50 88 L17 69 L17 31 Z" stroke="currentColor" stroke-dasharray="2 2" stroke-opacity="0.6" stroke-width="1.8"></path>
+<path d="M50 12 L50 40 M83 31 L60 50 M83 69 L60 55 M50 88 L50 65 M17 69 L40 55 M17 31 L40 50" stroke="currentColor" stroke-opacity="0.8" stroke-width="1.5"></path>
+<!-- Central Cube / Core Node -->
+<path d="M50 35 L62 42 L62 58 L50 65 L38 58 L38 42 Z" fill="#1d4ed8" fill-opacity="0.5" stroke="#4cd6fb" stroke-width="2"></path>
+<path d="M50 35 L50 65 M50 50 L62 42 M50 50 L38 42" stroke="#4cd6fb" stroke-width="1.5"></path>
+</svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Ingresa tu PIN de seguridad</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Acceso rápido para punto de venta y cobros</p>
+<!-- PIN Digits Status Display (3 filled, 1 empty state matching PRD) -->
+<div class="flex items-center justify-center space-x-5 my-3.5" id="pinDisplay">
+<!-- Dot 1 -->
+<div class="pin-dot w-4 h-4 rounded-full bg-secondary shadow-[0_0_12px_rgba(76,214,251,0.85)] scale-110 transition-all duration-200"></div>
+<!-- Dot 2 -->
+<div class="pin-dot w-4 h-4 rounded-full bg-secondary shadow-[0_0_12px_rgba(76,214,251,0.85)] scale-110 transition-all duration-200"></div>
+<!-- Dot 3 -->
+<div class="pin-dot w-4 h-4 rounded-full bg-secondary shadow-[0_0_12px_rgba(76,214,251,0.85)] scale-110 transition-all duration-200"></div>
+<!-- Dot 4 (Empty awaiting tap) -->
+<div class="pin-dot w-4 h-4 rounded-full bg-surface-container-highest transition-all duration-200"></div>
+</div>
+</div>
+<!-- Tactical Numeric POS Keypad -->
+<div class="mt-2 w-full px-2">
+<div class="grid grid-cols-3 gap-3 max-w-[320px] mx-auto">
+<!-- 1 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">1</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">POS</span>
+</button>
+<!-- 2 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">2</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">ABC</span>
+</button>
+<!-- 3 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">3</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">DEF</span>
+</button>
+<!-- 4 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">4</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">GHI</span>
+</button>
+<!-- 5 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">5</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">JKL</span>
+</button>
+<!-- 6 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">6</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">MNO</span>
+</button>
+<!-- 7 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">7</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">PQRS</span>
+</button>
+<!-- 8 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">8</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">TUV</span>
+</button>
+<!-- 9 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">9</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant tracking-widest uppercase opacity-60">WXYZ</span>
+</button>
+<!-- Biometric Tap (Fingerprint / FaceID) -->
+<button aria-label="Acceso Biométrico" class="h-16 rounded-2xl bg-surface-container hover:bg-surface-container-high active:bg-secondary-container active:scale-95 flex flex-col items-center justify-center text-secondary shadow-sm transition group" id="bioBtn" type="button">
+<span class="material-symbols-outlined text-[28px] group-hover:scale-110 transition-transform">fingerprint</span>
+<span class="font-label-sm text-[8px] uppercase tracking-wider text-on-surface-variant mt-0.5">Biométrica</span>
+</button>
+<!-- 0 -->
+<button class="keypad-num h-16 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest active:bg-primary-container active:scale-95 flex flex-col items-center justify-center shadow-sm transition" type="button">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">0</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant uppercase opacity-60 font-semibold">•</span>
+</button>
+<!-- Backspace / Delete -->
+<button aria-label="Borrar dígito" class="h-16 rounded-2xl bg-surface-container hover:bg-surface-container-high active:bg-error-container active:scale-95 flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface shadow-sm transition" id="backspaceBtn" type="button">
+<span class="material-symbols-outlined text-[26px]">backspace</span>
+<span class="font-label-sm text-[8px] uppercase tracking-wider text-on-surface-variant mt-0.5">Borrar</span>
+</button>
+</div>
+</div>
+<!-- Bottom Navigation & Alternative Action Links -->
+<div class="mt-5 flex flex-col items-center space-y-2 text-center">
+<button class="flex items-center justify-center space-x-1.5 py-1.5 px-3 rounded-lg text-secondary hover:text-secondary-fixed transition" id="switchUserBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+<span class="font-label-lg text-label-lg font-medium">¿No eres Carlos? Cambiar usuario</span>
+</button>
+<button class="py-1 px-3 text-on-surface-variant hover:text-on-surface text-center transition" type="button">
+<span class="font-body-sm text-body-sm underline decoration-outline-variant underline-offset-4 font-normal">Acceder con correo y contraseña</span>
+</button>
+</div>
+<!-- Subtitle Security / Offline Badge -->
+<div class="mt-4 pt-3 flex items-center justify-center space-x-2 text-on-surface-variant/70">
+<span class="material-symbols-outlined text-[15px] text-secondary">cloud_done</span>
+<span class="font-label-sm text-label-sm">Conexión híbrida local + cloud activa</span>
+</div>
+</div>
+<script>
+  (function() {
+    let pinCount = 3;
+    const maxDigits = 4;
+    const pinDots = document.querySelectorAll('.pin-dot');
+    const keypadButtons = document.querySelectorAll('.keypad-num');
+    const backspaceBtn = document.getElementById('backspaceBtn');
+    const bioBtn = document.getElementById('bioBtn');
+    const barberButtons = document.querySelectorAll('.barber-select-btn');
+    const nameEl = document.getElementById('activeBarberName');
+    const roleEl = document.getElementById('activeBarberRole');
+    const switchUserBtn = document.getElementById('switchUserBtn');
+
+    function updateDots() {
+      pinDots.forEach((dot, index) => {
+        if (index < pinCount) {
+          dot.className = 'pin-dot w-4 h-4 rounded-full bg-secondary shadow-[0_0_12px_rgba(76,214,251,0.85)] scale-110 transition-all duration-200';
+        } else {
+          dot.className = 'pin-dot w-4 h-4 rounded-full bg-surface-container-highest transition-all duration-200';
+        }
+      });
+
+      if (pinCount === maxDigits) {
+        setTimeout(() => {
+          pinDots.forEach(dot => {
+            dot.className = 'pin-dot w-4 h-4 rounded-full bg-primary-fixed shadow-[0_0_14px_rgba(183,196,255,0.9)] scale-125 transition-all duration-200';
+          });
+          setTimeout(() => {
+            pinCount = 0;
+            updateDots();
+          }, 600);
+        }, 150);
+      }
+    }
+
+    keypadButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (pinCount < maxDigits) {
+          pinCount++;
+          updateDots();
+        }
+      });
+    });
+
+    backspaceBtn.addEventListener('click', () => {
+      if (pinCount > 0) {
+        pinCount--;
+        updateDots();
+      }
+    });
+
+    bioBtn.addEventListener('click', () => {
+      pinCount = maxDigits;
+      updateDots();
+    });
+
+    barberButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        barberButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-high', 'opacity-100');
+          b.classList.add('bg-surface-container', 'opacity-70');
+          const checkIcon = b.querySelector('.bg-secondary');
+          if (checkIcon) {
+            checkIcon.classList.remove('h-4', 'w-4', 'text-surface-container-lowest');
+            checkIcon.classList.add('w-3', 'h-3');
+            checkIcon.innerHTML = '';
+          }
+        });
+
+        btn.classList.add('bg-surface-container-high', 'opacity-100');
+        btn.classList.remove('opacity-70');
+
+        const newName = btn.dataset.name;
+        const newRole = btn.dataset.role;
+        if (nameEl) nameEl.textContent = newName;
+        if (roleEl) roleEl.textContent = newRole;
+
+        const firstName = newName.split(' ')[0];
+        if (switchUserBtn) {
+          switchUserBtn.querySelector('span:last-child').textContent = `¿No eres ${firstName}? Cambiar usuario`;
+        }
+
+        pinCount = 0;
+        updateDots();
+      });
+    });
+
+    switchUserBtn.addEventListener('click', () => {
+      const carousel = document.getElementById('barberCarousel');
+      if (carousel) {
+        carousel.scrollBy({ left: 120, behavior: 'smooth' });
+      }
+    });
+  })();
+</script></main></body></html>

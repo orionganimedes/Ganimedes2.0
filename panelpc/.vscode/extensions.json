@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "vadimcn.vscode-lldb"
+    ],
+    "unwantedRecommendations": [
+        // Este proyecto ya no usa Flutter ni Dart.
+        "dart-code.dart-code",
+        "dart-code.flutter"
+    ]
+}

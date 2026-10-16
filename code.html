@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#0b1326;color:#dae2fd;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#0b1326", "on-secondary-fixed": "#001f27", "secondary": "#4cd6fb", "on-tertiary": "#233148", "secondary-fixed": "#b3ebff", "on-primary-fixed": "#001551", "on-secondary": "#003642", "on-primary": "#002682", "on-background": "#dae2fd", "surface-variant": "#2d3449", "surface-tint": "#b7c4ff", "on-surface-variant": "#c4c5d7", "on-error-container": "#ffdad6", "outline-variant": "#434655", "surface-container-lowest": "#060e20", "primary-fixed-dim": "#b7c4ff", "on-primary-container": "#cad3ff", "tertiary-fixed-dim": "#b9c7e4", "surface-container": "#171f33", "outline": "#8e90a0", "on-secondary-fixed-variant": "#004e5f", "surface-container-highest": "#2d3449", "inverse-primary": "#2151da", "surface-container-low": "#131b2e", "primary-container": "#1d4ed8", "tertiary": "#b9c7e4", "surface-container-high": "#222a3d", "error": "#ffb4ab", "surface-dim": "#0b1326", "secondary-container": "#00b2d6", "error-container": "#93000a", "primary-fixed": "#dce1ff", "tertiary-fixed": "#d6e3ff", "on-primary-fixed-variant": "#0039b5", "inverse-on-surface": "#283044", "on-tertiary-container": "c7d5f3", "surface": "#0b1326", "secondary-fixed-dim": "#4cd6fb", "on-surface": "#dae2fd", "on-tertiary-fixed-variant": "#39475f", "tertiary-container": "#4f5c75", "inverse-surface": "#dae2fd", "primary": "#b7c4ff", "surface-bright": "#31394d", "on-tertiary-fixed": "#0d1c32", "on-secondary-container": "#003f4e", "on-error": "#690005" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-xl": "2rem", "space-xs": "0.25rem", "margin": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1rem" }, "fontFamily": { "headline-sm": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "headline-xl": ["Inter"], "label-md": ["Inter"] }, "fontSize": { "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary-container to-secondary flex items-center justify-center text-on-secondary shadow-md"><span class="material-symbols-outlined text-[20px]">point_of_sale</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-tight">Ganimedes</span><span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide uppercase leading-none">Copilot Ia</span></div></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="p-0.5 rounded-full ring-1 ring-secondary/30 ml-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X6VTbnW1MD36pOHftQmA3bi5qx2ETWhn2cS2UkVALF5gH4gYNVSk45W9Lgu3jlLHktixbtMoJtii_F9Z9qp0t15vWVQwZa0FeWTSxnty0T1ttWAJ-jvrFnoNpu5T4MsILtWjEjoJTSerz8ECS6aveFFmOa4yOd8oFSC315wKLhmNPHibdR-WRO3-FtqqmjgJKK8kUYD_2cwewRkctEpusuz7hKZrR0ipmz4Tfq8cRcH9nDWnI5jRduo_lAAnKGJ1qZj7-fU74Cgy8"/></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Assistant Context Header / Node Status Bar -->
+<section class="px-margin pt-space-xs pb-space-sm flex flex-col gap-space-xs">
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between shadow-md">
+<div class="flex items-center gap-space-sm min-w-0">
+<!-- Geometric Hex Node Avatar with Cyan Halo -->
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-primary-container via-secondary-container to-secondary flex items-center justify-center text-on-secondary shadow-[0_0_16px_rgba(76,214,251,0.35)]">
+<svg class="w-6 h-6 text-on-secondary" fill="currentColor" viewbox="0 0 100 100">
+<!-- Geometric Node Cube Icon -->
+<polygon fill="none" points="50,15 80,32 80,68 50,85 20,68 20,32" stroke="currentColor" stroke-width="6"></polygon>
+<polygon fill="currentColor" fill-opacity="0.3" points="50,30 70,42 70,66 50,78 30,66 30,42"></polygon>
+<circle cx="50" cy="15" fill="currentColor" r="7"></circle>
+<circle cx="80" cy="32" fill="currentColor" r="7"></circle>
+<circle cx="80" cy="68" fill="currentColor" r="7"></circle>
+<circle cx="50" cy="85" fill="currentColor" r="7"></circle>
+<circle cx="20" cy="68" fill="currentColor" r="7"></circle>
+<circle cx="20" cy="32" fill="currentColor" r="7"></circle>
+<circle cx="50" cy="50" fill="#ffffff" r="8"></circle>
+</svg>
+</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-secondary flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping opacity-75"></span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Copilot IA</h1>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1 animate-pulse"></span>
+              Nodo 01
+            </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">
+            Turno Mañana • Carlos Mendoza (Sillón 01)
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" id="clearChatBtn" title="Limpiar sesión">
+<span class="material-symbols-outlined text-[18px]">cleaning_services</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" title="Ajustes de modelo">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Micro Sync Feed Pill -->
+<div class="flex items-center justify-between px-space-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">database</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PocketBase DB sincronizado • Latencia 18ms</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">En vivo</span>
+</div>
+</section>
+<!-- Interactive Chat Stream Area -->
+<section class="flex flex-col px-margin gap-space-md pb-space-md" id="chatStream">
+<!-- 1. System Welcome Node -->
+<div class="flex items-start gap-space-sm max-w-[94%]">
+<div class="w-7 h-7 rounded-lg bg-secondary-container text-on-secondary flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-surface-container-high text-on-surface rounded-2xl rounded-tl-sm p-space-md shadow-md">
+<p class="font-body-md text-body-md text-on-surface">
+            ¡Buen día Carlos! 👋 Estoy monitoreando tus ventas en tiempo real, el inventario de la sucursal y tus comisiones activas.
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+            ¿En qué puedo apoyarte con el siguiente cliente?
+          </p>
+</div>
+<span class="font-label-sm text-label-sm text-outline px-1">09:41 AM • Ganimedes Core</span>
+</div>
+</div>
+<!-- 2. User Message 1 -->
+<div class="flex items-start justify-end gap-space-sm max-w-[92%] self-end">
+<div class="flex flex-col items-end gap-1">
+<div class="bg-primary-container text-on-primary-container rounded-2xl rounded-tr-sm p-space-md shadow-md">
+<p class="font-body-md text-body-md text-on-primary-container">
+            ¿Cómo va mi rendimiento de hoy y qué producto debería ofrecer a mi siguiente cliente?
+          </p>
+</div>
+<span class="font-label-sm text-label-sm text-outline px-1">09:42 AM</span>
+</div>
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+</div>
+</div>
+<!-- 3. Assistant Insight Card with Action Pill -->
+<div class="flex items-start gap-space-sm max-w-[98%]">
+<div class="w-7 h-7 rounded-lg bg-secondary-container text-on-secondary flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2 w-full">
+<!-- Interactive Analytics Insight Bubble -->
+<div class="bg-surface-container-high rounded-2xl rounded-tl-sm p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">insights</span>
+              Diagnóstico de Turno
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Meta diaria: 72%</span>
+</div>
+<!-- Micro KPI Highlight -->
+<div class="bg-surface-container rounded-xl p-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Ventas acumuladas</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">$2,450 <span class="font-label-md text-label-md text-secondary">MXN</span></span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Completados</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-semibold">8 servicios</span>
+</div>
+</div>
+<!-- Circular Metric Mini Progress Bar -->
+<div class="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-gradient-to-r from-primary-container via-secondary-container to-secondary h-1.5 rounded-full" style="width: 72%;"></div>
+</div>
+<!-- Recommendation Body -->
+<div class="bg-surface-container/70 rounded-xl p-space-sm flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">hotel_class</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Oportunidad de Cross-Sell</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+              Tu próximo cliente agendó <span class="text-secondary font-medium">Ritual de Barba</span> (10:00 AM).
+              Hay stock óptimo de <strong class="text-on-surface">Pomada Matte</strong> y <strong class="text-on-surface">Aceite Wood &amp; Oak</strong>.
+            </p>
+<div class="p-2 rounded-lg bg-surface-container-lowest flex items-center gap-2 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">trending_up</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+                El combo con 10% de descuento sugerido eleva tu ticket promedio en <span class="text-secondary font-semibold">+$220 MXN</span>.
+              </span>
+</div>
+</div>
+<!-- Contextual Quick Action Buttons -->
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+              Aplicar combo a siguiente orden
+            </button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-highest text-on-surface font-label-md text-label-md hover:bg-surface-bright active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+              Ver comisiones
+            </button>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline px-1">09:42 AM • Copilot Engine v4.2</span>
+</div>
+</div>
+<!-- 4. User Message 2 -->
+<div class="flex items-start justify-end gap-space-sm max-w-[92%] self-end">
+<div class="flex flex-col items-end gap-1">
+<div class="bg-primary-container text-on-primary-container rounded-2xl rounded-tr-sm p-space-md shadow-md">
+<p class="font-body-md text-body-md text-on-primary-container">
+            Revisa si nos queda Cold Brew en el refrigerador.
+          </p>
+</div>
+<span class="font-label-sm text-label-sm text-outline px-1">09:44 AM</span>
+</div>
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+</div>
+</div>
+<!-- 5. Assistant Stock Card Response -->
+<div class="flex items-start gap-space-sm max-w-[98%]">
+<div class="w-7 h-7 rounded-lg bg-secondary-container text-on-secondary flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2 w-full">
+<div class="bg-surface-container-high rounded-2xl rounded-tl-sm p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+              Inventario en Tiempo Real
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm font-semibold">
+              Stock Saludable
+            </span>
+</div>
+<!-- Product Card Snapshot -->
+<div class="bg-surface-container rounded-xl p-space-sm flex items-center gap-space-sm">
+<div class="w-16 h-16 rounded-lg bg-surface-container-lowest overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="An artisanal amber glass bottle of Cold Brew Chiapas coffee with a minimalist dark craft label, set against a dark moody barbershop background with soft rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHBinKtctkbLM2P3lxUrCD8w2_vrr1pJ5xSRbyQxfFjdhdQgh5OF4LZ_Cz34PrRA8p_7oIYw0MXoUepWc97UadNa8vBaJQ3MZ9zC_pcA2-TADHlIiMiQroYWdVQ2wYDiWvnqGowT8pm3RVVo5S-1zEwi3nQ8qbv486rT1NT88ggiy0kbeUJAx_UMUzcAEIZp0FOrPfgrzg6IC4ls9M9Gu2tmr5lPaSh21v8yyjfebt"/>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Cold Brew Chiapas 250ml</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lote #CB-409 • Nevera Principal</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">28 pzas</span>
+<span class="font-label-sm text-label-sm text-outline">| Min. 10 pzas</span>
+</div>
+</div>
+</div>
+<!-- Supplier Status Note -->
+<div class="flex items-center gap-2 px-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">local_shipping</span>
+<span>Proveedor local programó reabastecimiento: <strong class="text-on-surface font-medium">Mañana 08:30 AM</strong>.</span>
+</div>
+<!-- Inline Actions -->
+<div class="flex items-center gap-2 pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-label-md text-label-md hover:bg-surface-bright flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+              Añadir 1 al ticket actual
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:text-on-surface flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">history</span>
+              Kardex
+            </button>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline px-1">09:44 AM • PocketBase Almacén</span>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom Dock: Suggestions Chips + Multimodal Input Bar -->
+<footer class="sticky bottom-0 z-40 bg-surface/95 backdrop-blur-xl pt-space-xs pb-space-sm px-margin flex flex-col gap-2">
+<!-- Quick Action Prompts (Horizontal Scroll) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-bright active:scale-95 transition-all shadow-sm" onclick="insertPrompt('📊 Resumen de ventas hoy')">
+<span>📊</span>
+<span>Resumen de hoy</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-bright active:scale-95 transition-all shadow-sm" onclick="insertPrompt('✂️ Mis comisiones acumuladas')">
+<span>✂️</span>
+<span>Mis comisiones</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-bright active:scale-95 transition-all shadow-sm" onclick="insertPrompt('📦 Reporte de bajo stock')">
+<span>📦</span>
+<span>Bajo stock</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-bright active:scale-95 transition-all shadow-sm" onclick="insertPrompt('⚡ Aplicar descuento VIP')">
+<span>⚡</span>
+<span>Descuento VIP</span>
+</button>
+</div>
+<!-- Multimodal Barber Input Container -->
+<div class="bg-surface-container-low rounded-2xl p-1.5 flex items-center gap-1.5 shadow-xl">
+<!-- Media/Scan Button -->
+<button class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high active:scale-95 transition-all flex-shrink-0" title="Escanear producto o ticket">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</button>
+<!-- Main Textfield -->
+<div class="flex-1 min-w-0">
+<input class="w-full bg-transparent text-on-surface placeholder-on-surface-variant font-body-md text-body-md px-2 py-2 focus:outline-none truncate" id="promptInput" placeholder="Escribe a Copilot o dicta un comando..." type="text"/>
+</div>
+<!-- Quick Voice Dictation Trigger for Busy Barbers -->
+<button class="w-10 h-10 rounded-xl bg-surface-container text-secondary flex items-center justify-center hover:bg-surface-container-high active:scale-95 transition-all flex-shrink-0" id="voiceBtn" title="Dictar por voz">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<!-- Dynamic Send Action Button with Cyan/Primary Gradient -->
+<button class="w-11 h-10 rounded-xl bg-gradient-to-tr from-primary-container to-secondary text-on-secondary flex items-center justify-center shadow-[0_2px_12px_rgba(76,214,251,0.35)] active:scale-95 hover:brightness-110 transition-all flex-shrink-0" id="sendBtn" title="Enviar consulta">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</footer>
+</div>
+<script>
+  // Simple Micro-interaction script for prompt insertion and dynamic response illusion
+  function insertPrompt(text) {
+    const input = document.getElementById('promptInput');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  const sendBtn = document.getElementById('sendBtn');
+  const promptInput = document.getElementById('promptInput');
+  const chatStream = document.getElementById('chatStream');
+
+  function appendUserMessage(text) {
+    if (!text.trim()) return;
+
+    // Create user bubble
+    const userMsg = document.createElement('div');
+    userMsg.className = 'flex items-start justify-end gap-space-sm max-w-[92%] self-end animate-fade-in';
+    userMsg.innerHTML = `
+      <div class="flex flex-col items-end gap-1">
+        <div class="bg-primary-container text-on-primary-container rounded-2xl rounded-tr-sm p-space-md shadow-md">
+          <p class="font-body-md text-body-md text-on-primary-container">${text}</p>
+        </div>
+        <span class="font-label-sm text-label-sm text-outline px-1">Ahora mismo</span>
+      </div>
+      <div class="w-7 h-7 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center flex-shrink-0 mt-1">
+        <span class="material-symbols-outlined text-[16px]">person</span>
+      </div>
+    `;
+    chatStream.appendChild(userMsg);
+
+    promptInput.value = '';
+
+    // Scroll slightly down
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+    // Simulate AI thinking and replying
+    setTimeout(() => {
+      const aiReply = document.createElement('div');
+      aiReply.className = 'flex items-start gap-space-sm max-w-[94%] animate-fade-in';
+      aiReply.innerHTML = `
+        <div class="w-7 h-7 rounded-lg bg-secondary-container text-on-secondary flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">smart_toy</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="bg-surface-container-high text-on-surface rounded-2xl rounded-tl-sm p-space-md shadow-md">
+            <p class="font-body-md text-body-md text-on-surface">
+              Procesando tu consulta en el nodo central. Registro de caja y métricas actualizadas con éxito.
+            </p>
+          </div>
+          <span class="font-label-sm text-label-sm text-outline px-1">En vivo • Copilot Node</span>
+        </div>
+      `;
+      chatStream.appendChild(aiReply);
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 600);
+  }
+
+  if (sendBtn && promptInput) {
+    sendBtn.addEventListener('click', () => {
+      appendUserMessage(promptInput.value);
+    });
+
+    promptInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        appendUserMessage(promptInput.value);
+      }
+    });
+  }
+
+  // Voice button micro tactile toggle
+  const voiceBtn = document.getElementById('voiceBtn');
+  if (voiceBtn) {
+    voiceBtn.addEventListener('click', () => {
+      voiceBtn.classList.toggle('bg-error-container');
+      voiceBtn.classList.toggle('text-error');
+      if (promptInput) {
+        promptInput.placeholder = voiceBtn.classList.contains('text-error') ? 'Escuchando comando de voz...' : 'Escribe a Copilot o dicta un comando...';
+      }
+    });
+  }
+
+  // Clear chat action
+  const clearChatBtn = document.getElementById('clearChatBtn');
+  if (clearChatBtn) {
+    clearChatBtn.addEventListener('click', () => {
+      const confirmed = confirm('¿Deseas reiniciar la sesión de Copilot IA?');
+      if (confirmed) {
+        location.reload();
+      }
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.35)]" data-active-classes="text-secondary font-semibold"><div class="flex justify-around items-center h-20 px-space-xs relative"><a class="flex flex-col items-center justify-center gap-1 min-w-[54px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-all" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm">Inicio</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[54px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-all" data-path="pos" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-sm text-label-sm">POS</span></a><a aria-current="page" class="flex flex-col items-center justify-center relative min-w-[58px] min-h-[58px] -mt-5 group text-secondary font-semibold" data-path="copilot-ia" href="#"><div class="w-13 h-13 p-3 rounded-2xl bg-gradient-to-tr from-primary-container via-secondary to-secondary-fixed shadow-[0_4px_20px_rgba(76,214,251,0.45)] flex items-center justify-center text-on-secondary-fixed transform group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[26px]">smart_toy</span></div><span class="font-label-sm text-label-sm text-secondary font-bold mt-1 tracking-wider uppercase">Copilot IA</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[54px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-all" data-path="inventario" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-sm text-label-sm">Inventario</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[54px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-all" data-path="caja" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-label-sm">Caja</span></a></div></nav></body></html>

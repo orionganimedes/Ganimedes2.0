@@ -1,0 +1,31 @@
+{
+    // Configuración del proyecto para VS Code.
+    // rust-analyzer revisa todo el workspace (raíz + crates/*).
+    "rust-analyzer.linkedProjects": ["Cargo.toml"],
+    "rust-analyzer.check.command": "check",
+    "rust-analyzer.check.extraArgs": ["--workspace"],
+    "rust-analyzer.cargo.features": "all",
+
+    // Formato y guías al estilo del código existente (4 espacios, 100 columnas).
+    "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.rulers": [100],
+        "editor.tabSize": 4
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+
+    // Los archivos de fuentes y las capturas no deben ensuciar las búsquedas.
+    "files.exclude": {
+        "**/target": true
+    },
+    "search.exclude": {
+        "**/target": true,
+        "Cargo.lock": true
+    },
+    "files.associations": {
+        "*.md": "markdown"
+    }
+}

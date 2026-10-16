@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>Ganimedes Business Engine - POS Terminal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-surface":"#dae2fd","outline":"#8e90a0","secondary":"#4cd6fb","surface-bright":"#31394d","on-secondary-fixed-variant":"#004e5f","on-primary-container":"#cad3ff","on-secondary-container":"#003f4e","tertiary-container":"#4f5c75","surface-container-low":"#131b2e","surface-container-highest":"#2d3449","on-tertiary":"#233148","on-tertiary-fixed-variant":"#39475f","on-primary-fixed":"#001551","on-secondary":"#003642","on-tertiary-fixed":"#0d1c32","on-primary":"#002682","on-tertiary-container":"#c7d5f3","secondary-container":"#00b2d6","surface-container":"#171f33","surface-tint":"#b7c4ff","surface-container-high":"#222a3d","inverse-primary":"#2151da","primary":"#b7c4ff","tertiary-fixed-dim":"#b9c7e4","primary-fixed":"#dce1ff","surface-dim":"#0b1326","surface-container-lowest":"#060e20","on-secondary-fixed":"#001f27","primary-fixed-dim":"#b7c4ff","surface-variant":"#2d3449","tertiary-fixed":"#d6e3ff","inverse-on-surface":"#283044","secondary-fixed-dim":"#4cd6fb","error":"#ffb4ab","primary-container":"#1d4ed8","on-background":"#dae2fd","outline-variant":"#434655","tertiary":"#b9c7e4","on-primary-fixed-variant":"#0039b5","on-surface":"#dae2fd","error-container":"#93000a","surface":"#0b1326","on-error-container":"#ffdad6","secondary-fixed":"#b3ebff","on-error":"#690005","on-surface-variant":"#c4c5d7","background":"#0b1326"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-md":"1rem","space-lg":"1.5rem","margin":"1rem","space-xl":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter":"1rem"},fontFamily:{"headline-md":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"label-lg":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"]},fontSize:{"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-sm":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.05em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-md shadow-[0_0_16px_rgba(76,214,251,0.25)]"><span class="material-symbols-outlined text-secondary">memory</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">GANIMEDES</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Business Engine</span></div></div><div class="px-space-md"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">TAURI RUST CORE</span></div><span class="font-label-sm text-label-sm text-secondary bg-surface-container px-space-xs py-0.5 rounded">&lt;1ms</span></div></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-[0_0_12px_rgba(29,78,216,0.3)]"><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-all bg-primary-container text-on-primary font-label-lg rounded-lg shadow-[0_0_12px_rgba(29,78,216,0.3)]" data-path="terminal-pos" href="#"><span class="material-symbols-outlined text-headline-sm">point_of_sale</span><span class="font-label-lg text-label-lg">Terminal POS</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="registro-de-ventas" href="#"><span class="material-symbols-outlined text-headline-sm">receipt_long</span><span class="font-label-lg text-label-lg">Ventas &amp; Tickets</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="catalogo-de-servicios" href="#"><span class="material-symbols-outlined text-headline-sm">inventory_2</span><span class="font-label-lg text-label-lg">Catálogo &amp; Stock</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="arqueo-y-caja" href="#"><span class="material-symbols-outlined text-headline-sm">account_balance_wallet</span><span class="font-label-lg text-label-lg">Arqueo de Caja</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="agenda-de-citas" href="#"><span class="material-symbols-outlined text-headline-sm">calendar_today</span><span class="font-label-lg text-label-lg">Agenda &amp; Turnos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="diagnostico-de-hardware" href="#"><span class="material-symbols-outlined text-headline-sm">terminal</span><span class="font-label-lg text-label-lg">Hardware Diagnostics</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="configuracion-del-sistema" href="#"><span class="material-symbols-outlined text-headline-sm">tune</span><span class="font-label-lg text-label-lg">Configuración</span></a></nav></div><div class="px-space-md flex flex-col gap-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-outline">DB LOCAL</span><span class="font-label-sm text-label-sm text-secondary font-semibold">SQLite OK</span></div><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-outline">SYNC CLOUD</span><span class="font-label-sm text-label-sm text-secondary font-semibold">PocketBase</span></div></div><div class="flex items-center justify-between px-space-xs text-outline font-label-sm text-label-sm"><span>BUILD 2025.2</span><span class="font-mono">x86_64</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg"><span class="material-symbols-outlined text-secondary text-headline-sm">store</span><span class="font-label-md text-label-md text-on-surface font-semibold">Sucursal Central</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-outline">Node #01</span></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-full"><span class="font-label-sm text-label-sm text-primary">Engine v2.4</span><span class="text-outline-variant font-label-sm">•</span><span class="font-label-sm text-label-sm text-secondary font-mono">Lat &lt;1ms</span></div><div class="hidden 2xl:flex items-center gap-space-xs"><div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded text-on-surface-variant font-label-sm text-label-sm" title="ESC/POS Thermal Printer Ready"><span class="material-symbols-outlined text-secondary text-body-md">print</span><span>PRN ESC/POS</span></div><div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded text-on-surface-variant font-label-sm text-label-sm" title="USB Barcode Scanner Active"><span class="material-symbols-outlined text-secondary text-body-md">barcode_scanner</span><span>SCANNER USB</span></div><div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded text-on-surface-variant font-label-sm text-label-sm" title="Cash Drawer RJ12 OK"><span class="material-symbols-outlined text-secondary text-body-md">point_of_sale</span><span>DRAWER</span></div><div class="flex items-center gap-1 bg-surface-container-low px-space-xs py-1 rounded text-on-surface-variant font-label-sm text-label-sm" title="PocketBase Offline Sync Active"><span class="material-symbols-outlined text-secondary text-body-md">cloud_sync</span><span>SYNC SQLITE</span></div></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs bg-surface-container-lowest p-1 rounded-lg"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-mono">F1 Ayuda</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-mono">F2 Buscar</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-mono">F8 Suspender</span><span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-mono font-semibold">F12 Cobro</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right flex flex-col justify-center"><div class="flex items-center justify-end gap-1"><span class="font-label-lg text-label-lg text-on-surface leading-none">Carlos Mendoza</span><span class="w-2 h-2 rounded-full bg-secondary"></span></div><span class="font-label-sm text-label-sm text-secondary font-mono leading-tight">Caja Principal • 15:42:09</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VdSPPZTBqZSqm77K9ZC7z3FToAfAK_ZXQ9KuOs7pllnGyWKiGli43NC8LL42nAdakM7GBaDyogtY8EMgiIZVsWx0FQKSZa9TPtYg_7sPojTY2J4LZ58kfb4Vh0utQl33tjdmCR-ztWXXgSE7vwogJwDBMKvQI7mcX0Fzuh0bHxxJM0NxGXkxe4bPzYskSnlg1Z7FIkhfgAgbNnldGlWGhekkJTcmENxxHFKj93I-0SXPdthbyKrqsVX5IUH8NO93clRtr4T97pJXs"/></div></div></header><main class="relative pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- HARDWARE & RUNTIME TELEMETRY BAR -->
+<div class="w-full bg-surface-container-lowest px-space-lg py-space-sm flex flex-col xl:flex-row xl:items-center justify-between gap-space-sm shadow-md z-10">
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Rust Kernel Status Pill -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#4cd6fb] animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary font-mono tracking-wider font-semibold">TAURI RUST CORE v2.0</span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Lat: 0.4ms</span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">RAM: 34 MB</span>
+<span class="text-outline-variant font-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">SQLite Local Sync OK</span>
+</div>
+<!-- Peripheral Telemetry Statuses -->
+<div class="hidden 2xl:flex items-center gap-space-xs">
+<div class="flex items-center gap-1.5 bg-surface-container px-space-xs py-1 rounded text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="material-symbols-outlined text-secondary text-headline-sm">print</span>
+<span class="font-mono">PRN ESC/POS USB</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-space-xs py-1 rounded text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="material-symbols-outlined text-secondary text-headline-sm">barcode_scanner</span>
+<span class="font-mono">SCANNER 2D USB</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-space-xs py-1 rounded text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="material-symbols-outlined text-secondary text-headline-sm">point_of_sale</span>
+<span class="font-mono">GAVETA RJ11</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-space-xs py-1 rounded text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="material-symbols-outlined text-secondary text-headline-sm">credit_card</span>
+<span class="font-mono">PINPAD BLE OK</span>
+</div>
+</div>
+</div>
+<!-- Quick Shortcuts Toolbar -->
+<div class="flex items-center flex-wrap gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-label-sm text-label-sm font-mono flex items-center gap-1">
+<span class="text-secondary font-bold">F1</span> Buscar Art.
+      </button>
+<button class="px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-label-sm text-label-sm font-mono flex items-center gap-1">
+<span class="text-secondary font-bold">F2</span> Cliente/Sillón
+      </button>
+<button class="px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-label-sm text-label-sm font-mono flex items-center gap-1">
+<span class="text-secondary font-bold">F3</span> Descuento
+      </button>
+<button class="px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-label-sm text-label-sm font-mono flex items-center gap-1">
+<span class="text-secondary font-bold">F4</span> Suspender
+      </button>
+<button class="px-2 py-0.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface font-label-sm text-label-sm font-mono flex items-center gap-1">
+<span class="text-secondary font-bold">F8</span> Cuentas (3)
+      </button>
+<button class="px-2.5 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-mono font-semibold flex items-center gap-1 shadow-[0_0_10px_rgba(29,78,216,0.5)]">
+<span class="text-secondary">F12</span> Cobro Express
+      </button>
+</div>
+</div>
+<!-- MAIN OPERATIONAL TWO-COLUMN WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md p-space-md w-full">
+<!-- LEFT PANEL: CATALOG, SEARCH & FAST TOUCH GRID (62% approx - 7 cols on lg, 7 or 8 on xl) -->
+<section class="lg:col-span-7 xl:col-span-8 flex flex-col gap-space-md min-w-0">
+<!-- Search SKU & Barcode Bar -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1 flex items-center">
+<span class="material-symbols-outlined text-outline absolute left-3 text-headline-sm">barcode_scanner</span>
+<input class="w-full h-11 pl-11 pr-24 bg-surface-container-highest rounded-lg text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all" id="sku-input" placeholder="Escanear código de barras o teclear artículo [F1 / Enter]..." type="text"/>
+<div class="absolute right-2 flex items-center gap-1">
+<span class="px-2 py-0.5 bg-surface-container-low text-secondary font-mono font-label-sm text-label-sm rounded">AUTO-SCAN</span>
+<button class="p-1.5 hover:bg-surface-container-low rounded text-outline hover:text-secondary transition-colors" title="Borrar">
+<span class="material-symbols-outlined text-body-md">backspace</span>
+</button>
+</div>
+</div>
+<button class="h-11 px-space-md bg-surface-container hover:bg-surface-container-high rounded-lg flex items-center gap-2 text-on-surface font-label-lg text-label-lg transition-colors">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<span>Filtros</span>
+</button>
+</div>
+<!-- Barber / Chair Quick Switchers -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider whitespace-nowrap">Estación:</span>
+<button class="px-space-sm py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1.5 shadow-[0_0_12px_rgba(29,78,216,0.35)] shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Sillón 01: Carlos M.</span>
+</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5 shrink-0 transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>Sillón 02: Roberto S.</span>
+</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5 shrink-0 transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>Sillón 03: David K.</span>
+</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5 shrink-0 transition-colors">
+<span class="material-symbols-outlined text-body-sm text-outline">flash_on</span>
+<span>Mostrador / Express</span>
+</button>
+</div>
+<!-- Category Horizontal Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pt-1">
+<button class="px-3 py-1 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold shrink-0">
+            Todos (48)
+          </button>
+<button class="px-3 py-1 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md shrink-0 transition-colors">
+            Cortes &amp; Barba
+          </button>
+<button class="px-3 py-1 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md shrink-0 transition-colors">
+            Tratamientos Capilares
+          </button>
+<button class="px-3 py-1 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md shrink-0 transition-colors">
+            Pomadas &amp; Ceras
+          </button>
+<button class="px-3 py-1 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md shrink-0 transition-colors">
+            Bebidas &amp; Barra
+          </button>
+<button class="px-3 py-1 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md shrink-0 transition-colors">
+            Kits Especiales
+          </button>
+</div>
+</div>
+<!-- TOUCH POS PRODUCTS & SERVICES GRID (4 cols) -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-space-sm overflow-y-auto max-h-[calc(100vh-280px)] pr-1">
+<!-- CARD 1 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Fade Clásico', 280, 84)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm uppercase tracking-wider">35 min</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">content_cut</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Fade Clásico</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Degradado con navaja &amp; acabado</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Com: 30%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$280.00</span>
+</div>
+</div>
+<!-- CARD 2 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Ritual Barba con Vapor', 200, 60)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm uppercase tracking-wider">25 min</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">spa</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Ritual Barba Vapor</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toalla caliente y aceites botánicos</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Com: 30%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$200.00</span>
+</div>
+</div>
+<!-- CARD 3 (FEATURED) -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-[0_4px_16px_rgba(29,78,216,0.2)] flex flex-col justify-between active:scale-95 relative overflow-hidden" onclick="addTicketItem('Corte + Barba VIP', 450, 135)">
+<div class="absolute -right-6 -top-6 w-16 h-16 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider">VIP 55m</span>
+<span class="material-symbols-outlined text-secondary text-body-md">star</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-secondary transition-colors">Corte + Barba VIP</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Servicio maestro integral</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Com: +$135</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$450.00</span>
+</div>
+</div>
+<!-- CARD 4 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Pomada Matte 4oz', 320, 32)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-mono">Stock: 14</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">inventory_2</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Pomada Matte 4oz</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">SKU: POM-04</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Retail 10%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$320.00</span>
+</div>
+</div>
+<!-- CARD 5 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Aceite Wood &amp; Oak', 260, 26)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-mono">Stock: 6</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">science</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Aceite Wood &amp; Oak</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">SKU: OIL-02</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Retail 10%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$260.00</span>
+</div>
+</div>
+<!-- CARD 6 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Cold Brew Chiapas 250ml', 65, 6.5)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-mono">Stock: 28</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">local_cafe</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Cold Brew Chiapas</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Extracción 18h frío</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Barra</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$65.00</span>
+</div>
+</div>
+<!-- CARD 7 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Mascarilla Carbón Activado', 180, 54)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm uppercase tracking-wider">20 min</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">face</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Mascarilla Carbón</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Limpieza profunda de poros</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Com: 30%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$180.00</span>
+</div>
+</div>
+<!-- CARD 8 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Cera Fijación Extrema', 290, 29)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-mono">Stock: 11</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">brush</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Cera Fuerte Extrema</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">SKU: WAX-99</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Retail 10%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$290.00</span>
+</div>
+</div>
+<!-- CARD 9 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Shampoo Bergamota 500ml', 340, 34)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-mono">Stock: 8</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">sanitizer</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Shampoo Bergamota</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Crecimiento &amp; grosor</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Retail 10%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$340.00</span>
+</div>
+</div>
+<!-- CARD 10 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Afeitado Tradicional Navaja', 220, 66)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm uppercase tracking-wider">30 min</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">cut</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Afeitado Navaja</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Espuma caliente y bálsamo</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Com: 30%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$220.00</span>
+</div>
+</div>
+<!-- CARD 11 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Exfoliación Facial', 210, 63)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm uppercase tracking-wider">25 min</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">clean_hands</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Exfoliación Facial</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Microgránulos de albaricoque</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Com: 30%</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$210.00</span>
+</div>
+</div>
+<!-- CARD 12 -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high p-space-sm rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-[0_8px_20px_rgba(76,214,251,0.12)] flex flex-col justify-between active:scale-95" onclick="addTicketItem('Agua Mineral Artesanal', 45, 4.5)">
+<div class="flex items-start justify-between gap-1 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-mono">Stock: 35</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary text-body-md">water_drop</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">Agua Artesanal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">SKU: BEV-01</p>
+</div>
+<div class="flex items-baseline justify-between mt-3 pt-2 bg-surface-container-lowest/60 px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-outline">Barra</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono font-bold">$45.00</span>
+</div>
+</div>
+</div>
+<!-- Quick Session Visual Info Footer -->
+<div class="bg-surface-container-low p-space-sm rounded-xl flex items-center justify-between mt-auto">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-body-md">schedule</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tiempo Promedio Atención: <strong class="text-on-surface font-mono">42 min</strong></span>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-body-md">person_pin</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Clientes Atendidos Hoy: <strong class="text-on-surface font-mono">19</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline uppercase font-mono">Transacciones Rust SQLite: 100% Sincronizado</span>
+</div>
+</div>
+</section>
+<!-- RIGHT PANEL: ACTIVE TICKET & CHECKOUT TERMINAL (38% approx - 5 cols on lg, 5 or 4 on xl) -->
+<section class="lg:col-span-5 xl:col-span-4 flex flex-col bg-surface-container-low rounded-2xl shadow-xl p-space-md min-w-0">
+<!-- Ticket Header with Customer & Barber Metadata -->
+<div class="bg-surface-container p-space-sm rounded-xl flex flex-col gap-space-xs mb-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-mono font-label-md text-label-md font-bold">TICKET #884</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-outline font-mono">15:42:18</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded" title="Cancelar Orden">
+<span class="material-symbols-outlined text-headline-sm">delete_sweep</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold font-mono text-body-sm">
+              RG
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Rodrigo García</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary/20 text-secondary font-label-sm text-label-sm font-semibold">VIP</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline truncate">Historial: 14 visitas • Saldo Favor: $0</span>
+</div>
+</div>
+<button class="p-1 rounded hover:bg-surface-container-high text-outline hover:text-secondary transition-colors" title="Editar Cliente">
+<span class="material-symbols-outlined text-headline-sm">badge</span>
+</button>
+</div>
+<div class="pt-1.5 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest/50 px-2 py-1 rounded">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-body-md">content_cut</span>
+<span>Carlos Mendoza</span>
+</span>
+<span class="text-secondary font-mono font-semibold">Sillón #01 Central</span>
+</div>
+</div>
+<!-- Ticket Items List -->
+<div class="flex-1 flex flex-col gap-2 overflow-y-auto max-h-[330px] pr-1 py-1" id="ticket-items">
+<!-- ITEM 1 -->
+<div class="bg-surface-container p-2.5 rounded-xl flex items-center justify-between gap-2 shadow-sm group">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface truncate font-medium">Corte + Barba VIP</span>
+<span class="font-label-lg text-label-lg text-on-surface font-mono font-semibold">$450.00</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-secondary font-mono font-semibold">Comisión Carlos: +$135.00</span>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-1.5 py-0.5 rounded">
+<button class="text-outline hover:text-on-surface text-body-sm font-mono px-1">-</button>
+<span class="font-mono font-label-sm text-label-sm text-on-surface font-bold px-1.5">1</span>
+<button class="text-outline hover:text-on-surface text-body-sm font-mono px-1">+</button>
+</div>
+</div>
+</div>
+<button class="text-outline hover:text-error p-1 rounded transition-colors opacity-70 group-hover:opacity-100">
+<span class="material-symbols-outlined text-body-md">close</span>
+</button>
+</div>
+<!-- ITEM 2 -->
+<div class="bg-surface-container p-2.5 rounded-xl flex items-center justify-between gap-2 shadow-sm group">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface truncate font-medium">Pomada Matte 4oz</span>
+<span class="font-label-lg text-label-lg text-on-surface font-mono font-semibold">$320.00</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-secondary font-mono font-semibold">Comisión Carlos: +$32.00</span>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-1.5 py-0.5 rounded">
+<button class="text-outline hover:text-on-surface text-body-sm font-mono px-1">-</button>
+<span class="font-mono font-label-sm text-label-sm text-on-surface font-bold px-1.5">1</span>
+<button class="text-outline hover:text-on-surface text-body-sm font-mono px-1">+</button>
+</div>
+</div>
+</div>
+<button class="text-outline hover:text-error p-1 rounded transition-colors opacity-70 group-hover:opacity-100">
+<span class="material-symbols-outlined text-body-md">close</span>
+</button>
+</div>
+<!-- ITEM 3 -->
+<div class="bg-surface-container p-2.5 rounded-xl flex items-center justify-between gap-2 shadow-sm group">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface truncate font-medium">Cold Brew Chiapas 250ml</span>
+<span class="font-label-lg text-label-lg text-on-surface font-mono font-semibold">$65.00</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-secondary font-mono font-semibold">Comisión Carlos: +$6.50</span>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-1.5 py-0.5 rounded">
+<button class="text-outline hover:text-on-surface text-body-sm font-mono px-1">-</button>
+<span class="font-mono font-label-sm text-label-sm text-on-surface font-bold px-1.5">1</span>
+<button class="text-outline hover:text-on-surface text-body-sm font-mono px-1">+</button>
+</div>
+</div>
+</div>
+<button class="text-outline hover:text-error p-1 rounded transition-colors opacity-70 group-hover:opacity-100">
+<span class="material-symbols-outlined text-body-md">close</span>
+</button>
+</div>
+</div>
+<!-- SMART SUGGESTION COPILOT PILL -->
+<div class="my-space-xs bg-surface-container-highest p-2.5 rounded-xl flex items-center justify-between gap-2 shadow-inner">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded-md bg-secondary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-body-md">smart_toy</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Copilot AI Sugerencia</span>
+<p class="font-body-sm text-body-sm text-on-surface truncate">Suele comprar Aftershave Wood ($190 con 15% off)</p>
+</div>
+</div>
+<button class="px-2 py-1 bg-secondary text-on-secondary hover:bg-secondary-fixed rounded text-label-sm font-label-sm font-semibold shrink-0 transition-colors" onclick="addTicketItem('Aftershave Wood Oak', 190, 19)">
+          + Añadir
+        </button>
+</div>
+<!-- FINANCIAL CALCULATIONS BOX -->
+<div class="bg-surface-container p-space-sm rounded-xl flex flex-col gap-1.5 mt-space-xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Subtotal de Venta</span>
+<span class="font-mono text-on-surface">$835.00 MXN</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-secondary font-medium">
+<span>Descuento VIP (-10% servicios)</span>
+<span class="font-mono">-$45.00 MXN</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>IVA Retenido (16% Retail)</span>
+<span class="font-mono text-on-surface">+$54.40 MXN</span>
+</div>
+<div class="pt-2 my-0.5 bg-surface-container-low px-space-sm py-2 rounded-lg flex items-baseline justify-between shadow-inner">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Total a Cobrar</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">Ganancia Carlos: $173.50</span>
+</div>
+<span class="font-headline-xl text-headline-xl text-secondary font-mono font-bold tracking-tight drop-shadow-[0_0_12px_rgba(76,214,251,0.3)]" id="ticket-total-display">
+            $844.40
+          </span>
+</div>
+</div>
+<!-- FAST TENDER PRESETS -->
+<div class="grid grid-cols-3 gap-2 mt-space-sm">
+<button class="py-1.5 bg-surface-container hover:bg-surface-container-high rounded-lg text-on-surface font-label-md text-label-md font-mono text-center transition-colors">
+          $500.00
+        </button>
+<button class="py-1.5 bg-surface-container hover:bg-surface-container-high rounded-lg text-on-surface font-label-md text-label-md font-mono text-center transition-colors">
+          $1,000.00
+        </button>
+<button class="py-1.5 bg-surface-container hover:bg-surface-container-high rounded-lg text-secondary font-label-md text-label-md font-mono font-bold text-center transition-colors">
+          Exacto $844.40
+        </button>
+</div>
+<!-- PAYMENT METHOD BUTTONS -->
+<div class="grid grid-cols-4 gap-1.5 mt-2">
+<button class="p-2 rounded-lg bg-surface-container-highest hover:bg-primary/20 text-on-surface font-label-sm text-label-sm flex flex-col items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-secondary text-headline-sm">payments</span>
+<span>Efectivo</span>
+</button>
+<button class="p-2 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex flex-col items-center gap-1 shadow-[0_0_10px_rgba(29,78,216,0.3)]">
+<span class="material-symbols-outlined text-secondary text-headline-sm">credit_card</span>
+<span class="font-semibold">Tarjeta</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-highest hover:bg-primary/20 text-on-surface font-label-sm text-label-sm flex flex-col items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-secondary text-headline-sm">qr_code_scanner</span>
+<span>Transf / QR</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-highest hover:bg-primary/20 text-on-surface font-label-sm text-label-sm flex flex-col items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-secondary text-headline-sm">pending_actions</span>
+<span>En Espera</span>
+</button>
+</div>
+<!-- MAIN CHECKOUT TRIGGER CTA -->
+<div class="flex flex-col gap-2 mt-space-md">
+<button class="w-full h-14 rounded-xl bg-gradient-to-r from-primary-container via-secondary-container to-secondary text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-between px-space-md shadow-[0_0_24px_rgba(76,214,251,0.35)] hover:shadow-[0_0_32px_rgba(76,214,251,0.5)] active:scale-[0.99] transition-all" onclick="triggerRustCheckout()">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface">point_of_sale</span>
+<span class="text-white drop-shadow">Cobrar Ticket</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-black/30 text-white font-mono font-label-sm text-label-sm">F12 / ENTER</span>
+<span class="text-white font-mono font-bold text-headline-md">$844.40</span>
+</div>
+</button>
+<div class="flex items-center justify-between px-1">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded bg-surface-container text-secondary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-outline">Imprimir ticket ESC/POS</span>
+</label>
+<span class="font-label-sm text-label-sm text-secondary font-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">eject</span> Auto-Apertura Gaveta
+          </span>
+</div>
+</div>
+</section>
+</div>
+<!-- CHECKOUT SUCCESS MODAL (HIDDEN BY DEFAULT) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-surface-dim/80 backdrop-blur-md" id="checkout-modal">
+<div class="bg-surface-container p-space-xl rounded-2xl max-w-md w-full shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col items-center text-center gap-space-md">
+<div class="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center text-secondary shadow-[0_0_20px_#4cd6fb]">
+<span class="material-symbols-outlined text-headline-xl">check_circle</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">¡Venta Procesada con Éxito!</h3>
+<p class="font-body-md text-body-md text-outline mt-1 font-mono">TICKET #884 • $844.40 MXN Cobrado</p>
+</div>
+<div class="w-full bg-surface-container-low p-space-sm rounded-xl flex flex-col gap-1 text-left font-mono font-body-sm text-body-sm">
+<div class="flex justify-between text-outline"><span>Impresora Térmica:</span><span class="text-secondary">ESC/POS Imprimiendo...</span></div>
+<div class="flex justify-between text-outline"><span>Gaveta de Efectivo:</span><span class="text-secondary">Disparada (RJ11)</span></div>
+<div class="flex justify-between text-outline"><span>Comisión Carlos M.:</span><span class="text-primary font-semibold">+$173.50 Acreditada</span></div>
+</div>
+<button class="w-full py-3 bg-primary-container hover:bg-inverse-primary rounded-xl text-on-primary font-headline-sm text-headline-sm transition-colors" onclick="closeModal()">
+        Nueva Venta [Enter]
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function addTicketItem(title, price, commission) {
+    const ticketList = document.getElementById('ticket-items');
+    if (!ticketList) return;
+
+    const itemRow = document.createElement('div');
+    itemRow.className = "bg-surface-container p-2.5 rounded-xl flex items-center justify-between gap-2 shadow-sm group animate-fadeIn";
+    itemRow.innerHTML = `
+      <div class="flex flex-col min-w-0 flex-1">
+        <div class="flex items-center justify-between">
+          <span class="font-label-lg text-label-lg text-on-surface truncate font-medium">${title}</span>
+          <span class="font-label-lg text-label-lg text-on-surface font-mono font-semibold">$${price.toFixed(2)}</span>
+        </div>
+        <div class="flex items-center justify-between mt-1">
+          <span class="font-label-sm text-label-sm text-secondary font-mono font-semibold">Comisión Carlos: +$${commission.toFixed(2)}</span>
+          <div class="flex items-center gap-1 bg-surface-container-lowest px-1.5 py-0.5 rounded">
+            <button class="text-outline hover:text-on-surface text-body-sm font-mono px-1">-</button>
+            <span class="font-mono font-label-sm text-label-sm text-on-surface font-bold px-1.5">1</span>
+            <button class="text-outline hover:text-on-surface text-body-sm font-mono px-1">+</button>
+          </div>
+        </div>
+      </div>
+      <button onclick="this.parentElement.remove()" class="text-outline hover:text-error p-1 rounded transition-colors opacity-70 group-hover:opacity-100">
+        <span class="material-symbols-outlined text-body-md">close</span>
+      </button>
+    `;
+    ticketList.appendChild(itemRow);
+    ticketList.scrollTop = ticketList.scrollHeight;
+  }
+
+  function triggerRustCheckout() {
+    const modal = document.getElementById('checkout-modal');
+    if (modal) {
+      modal.classList.remove('hidden');
+    }
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('checkout-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  }
+
+  // Keyboard shortcut listener for F12 & Esc
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12') {
+      e.preventDefault();
+      triggerRustCheckout();
+    } else if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script></main></div></body></html>

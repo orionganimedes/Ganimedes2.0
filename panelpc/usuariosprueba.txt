@@ -1,0 +1,4 @@
+Usuario	Contraseña	Rol	Extra
+admin	admin	Administrador	también admin@ganimedes.pos
+cajero	cajero	Cajero	cajero@ganimedes.pos
+barbero	barbero	Barbero	silla S-03, turno mañana

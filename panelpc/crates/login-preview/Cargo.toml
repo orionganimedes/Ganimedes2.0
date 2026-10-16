@@ -1,0 +1,23 @@
+[package]
+# Herramienta de desarrollo: muestra SOLO la pantalla de acceso a pantalla
+# completa para iterar el diseño sin navegar por el POS.
+#
+# Reutiliza los módulos reales de la biblioteca `ganimedes-pos` (no copia
+# código), así que lo que se ve aquí es exactamente lo que usa la aplicación.
+#
+#   cargo run -p ganimedes-login-preview
+#
+# No forma parte del binario de producción.
+name = "ganimedes-login-preview"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+eframe = { version = "0.31", default-features = false, features = [
+    "default_fonts",
+    "glow",
+    "x11",
+    "wayland",
+] }
+ganimedes-pos = { path = "../.." }

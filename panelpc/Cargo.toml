@@ -1,0 +1,52 @@
+[package]
+name = "ganimedes-pos"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Ganimedes Panel POS - Punto de Venta nativo para panel PC (Rust + eframe/egui)"
+authors = ["Ganimedes Team"]
+license = "MIT"
+readme = "README.md"
+default-run = "ganimedes-pos"
+
+[lib]
+name = "ganimedes_pos"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ganimedes-pos"
+path = "src/main.rs"
+
+# ---------------------------------------------------------------------------
+# Workspace: un solo Cargo.lock y un solo target/ para todos los crates.
+# ---------------------------------------------------------------------------
+[workspace]
+members = [".", "crates/login-preview"]
+resolver = "2"
+
+[dependencies]
+chrono = "0.4.45"
+eframe = { version = "0.31", default-features = false, features = [
+    "default_fonts",
+    "glow",
+    "x11",
+    "wayland",
+] }
+reqwest = { version = "0.13", features = ["json"] }
+rusqlite = "0.40.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# ---------------------------------------------------------------------------
+# Perfiles de compilación
+# ---------------------------------------------------------------------------
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+# Desarrollo: dependencias optimizadas para que la UI no vaya a tirones.
+[profile.dev.package."*"]
+opt-level = 2
