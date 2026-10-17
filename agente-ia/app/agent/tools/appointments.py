@@ -4,9 +4,13 @@ from app.agent.tools.registry import register
 
 async def _list_appointments(tenant, args, pb):
     status = args.get("status")
-    filter = f'status = "{status}"' if status else ""
 
-    items, total = pb.list("appointments", tenant, filter=filter, sort="date")
+    filters = [f'business_name = "{tenant}"']
+    if status:
+        filters.append(f'status = "{status}"')
+    filter_str = " && ".join(filters)
+
+    items, total = pb.list("appointments", tenant, filter=filter_str, sort="date")
 
     return {
         "total_appointments": total,

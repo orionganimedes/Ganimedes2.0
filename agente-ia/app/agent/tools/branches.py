@@ -3,7 +3,8 @@ from app.agent.tools.registry import register
 
 
 async def _list_branches(tenant, args, pb):
-    items, total = pb.list("branches", tenant, sort="name")
+    tenant_filter = f'business_name = "{tenant}"'
+    items, total = pb.list("branches", tenant, filter=tenant_filter, sort="name")
 
     return {
         "total_branches": total,

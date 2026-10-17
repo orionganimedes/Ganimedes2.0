@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -150,12 +151,16 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
     }
   }
 
-  void _scrollToBottom() {
+  void _scrollToBottom({bool immediate = false}) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_scrollController.hasClients) {
+      if (!_scrollController.hasClients) return;
+      final target = _scrollController.position.maxScrollExtent;
+      if (immediate) {
+        _scrollController.jumpTo(target);
+      } else {
         _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 280),
+          target,
+          duration: const Duration(milliseconds: 220),
           curve: Curves.easeOutCubic,
         );
       }
@@ -188,7 +193,7 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
     });
     _scrollToBottom();
 
-    final history = _messages
+    final allHistory = _messages
         .take(_messages.length - 2)
         .where((m) => m.type == MessageType.text && m.text.isNotEmpty)
         .map((m) => {
@@ -196,38 +201,74 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
               'content': m.text,
             })
         .toList();
+    final history = allHistory.length > 6
+        ? allHistory.sublist(allHistory.length - 6)
+        : allHistory;
+
+    String networkBuffer = '';
+    int displayedLen = 0;
+    bool networkDone = false;
+    final drainCompleter = Completer<void>();
+
+    // Buffer de tipado fluido a ~60fps estilo ChatGPT
+    final typewriterTimer = Timer.periodic(const Duration(milliseconds: 16), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        if (!drainCompleter.isCompleted) drainCompleter.complete();
+        return;
+      }
+      final remaining = networkBuffer.length - displayedLen;
+      if (remaining > 0) {
+        // Avanza de forma adaptativa (1 a 5 caracteres por frame) para fluidez sin rezago
+        final step = remaining > 40
+            ? 5
+            : remaining > 20
+                ? 3
+                : remaining > 8
+                    ? 2
+                    : 1;
+        displayedLen = (displayedLen + step).clamp(0, networkBuffer.length);
+        setState(() {
+          assistantMsg.text = networkBuffer.substring(0, displayedLen);
+          _isOnline = true;
+        });
+        _scrollToBottom(immediate: true);
+      } else if (networkDone) {
+        timer.cancel();
+        if (!drainCompleter.isCompleted) drainCompleter.complete();
+      }
+    });
 
     try {
-      String fullReply = '';
       await for (final token in AiChatService.sendMessageStream(
         text,
         history: history,
       )) {
         if (!mounted) break;
-        fullReply += token;
-        setState(() {
-          assistantMsg.text = fullReply;
-          _isOnline = true;
-        });
-        _scrollToBottom();
+        networkBuffer += token;
       }
+      networkDone = true;
+      await drainCompleter.future;
 
       if (mounted) {
         setState(() {
+          assistantMsg.text = networkBuffer;
           assistantMsg.isStreaming = false;
           _isSending = false;
         });
         _scrollToBottom();
       }
     } catch (e) {
+      networkDone = true;
+      typewriterTimer.cancel();
       if (mounted) {
         setState(() {
-          if (assistantMsg.text.isEmpty) {
+          if (networkBuffer.isEmpty) {
             assistantMsg.text =
                 '⚠️ No fue posible comunicarse con el nodo Copilot.\n\nDetalle: ${e.toString().replaceAll("Exception: ", "")}';
           } else {
-            assistantMsg.text +=
-                '\n\n⚠️ [Transmisión interrumpida: ${e.toString().replaceAll("Exception: ", "")}]';
+            assistantMsg.text =
+                '$networkBuffer\n\n⚠️ [Transmisión interrumpida: ${e.toString().replaceAll("Exception: ", "")}]';
           }
           assistantMsg.isStreaming = false;
           _isSending = false;

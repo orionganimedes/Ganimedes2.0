@@ -3,8 +3,15 @@ from app.agent.tools.registry import register
 
 
 async def _get_barber_stats(tenant, args, pb):
-    barbers, _ = pb.list("users", tenant, filter='role != "admin"')
-    sales, _ = pb.list("sales", tenant)
+    barber_name = args.get("barber_name", "").strip()
+
+    barber_filters = [f'business_name = "{tenant}"', 'role != "admin"']
+    if barber_name:
+        barber_filters.append(f'name ~ "{barber_name}"')
+    barbers, _ = pb.list("users", tenant, filter=" && ".join(barber_filters))
+
+    sales_filter = f'business_name = "{tenant}"'
+    sales, _ = pb.list("sales", tenant, filter=sales_filter)
 
     stats: dict = {}
     for b in barbers:

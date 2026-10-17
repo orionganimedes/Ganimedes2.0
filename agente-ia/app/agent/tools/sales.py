@@ -4,9 +4,28 @@ from app.agent.tools.registry import register
 
 async def _get_sales_report(tenant, args, pb):
     branch_code = args.get("branch_code")
-    filter = f'branch_code = "{branch_code}"' if branch_code else ""
+    filters = [f'business_name = "{tenant}"']
+    if branch_code:
+        filters.append(f'branch_code = "{branch_code}"')
+    filter_str = " && ".join(filters)
 
-    items, total = pb.list("sales", tenant, filter=filter, sort="-created")
+    period = args.get("period", "").strip().lower()
+    if period:
+        from datetime import datetime, timedelta, timezone
+        now = datetime.now(timezone.utc)
+        if period == "hoy":
+            since = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        elif period == "7d":
+            since = now - timedelta(days=7)
+        elif period == "30d":
+            since = now - timedelta(days=30)
+        else:
+            since = None
+        if since is not None:
+            since_str = since.strftime("%Y-%m-%d %H:%M:%S")
+            filter_str += f' && created >= "{since_str}"'
+
+    items, total = pb.list("sales", tenant, filter=filter_str, sort="-created")
 
     by_method: dict = {}
     total_amount = 0.0

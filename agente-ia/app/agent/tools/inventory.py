@@ -3,8 +3,15 @@ from app.agent.tools.registry import register
 
 
 async def _get_inventory_status(tenant, args, pb):
-    # Lee TODO el catálogo (servicios + productos físicos) en modo lectura.
-    items, total = pb.list("products_services", tenant, sort="name")
+    category = args.get("category", "").strip()
+    only_low_stock = args.get("only_low_stock", False)
+
+    filters = [f'business_name = "{tenant}"']
+    if category:
+        filters.append(f'category_name = "{category}"')
+    filter_str = " && ".join(filters)
+
+    items, total = pb.list("products_services", tenant, filter=filter_str, sort="name")
 
     services = []
     products = []
@@ -12,12 +19,12 @@ async def _get_inventory_status(tenant, args, pb):
     for p in items:
         name = p.get("name")
         price = p.get("price")
-        category = p.get("category_name")
+        cat = p.get("category_name")
         if p.get("is_service") is True:
             services.append({
                 "name": name,
                 "price": price,
-                "category": category,
+                "category": cat,
                 "duration_minutes": p.get("duration_minutes"),
             })
         else:
@@ -27,7 +34,7 @@ async def _get_inventory_status(tenant, args, pb):
                 "name": name,
                 "sku": p.get("sku"),
                 "price": price,
-                "category": category,
+                "category": cat,
                 "stock": stock,
                 "min_stock_alert": min_stock,
             }
@@ -35,10 +42,13 @@ async def _get_inventory_status(tenant, args, pb):
             if min_stock > 0 and stock <= min_stock:
                 low_stock.append(entry)
 
+    result_products = low_stock if only_low_stock else products
+    result_services = [] if only_low_stock else services[:50]
+
     return {
         "total_catalog": total,
-        "services": services[:50],
-        "products": products[:50],
+        "services": result_services,
+        "products": result_products[:50],
         "low_stock_count": len(low_stock),
         "low_stock": low_stock,
     }
