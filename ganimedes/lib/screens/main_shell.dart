@@ -30,7 +30,6 @@ class _MainShellState extends State<MainShell> {
       onOperatorSelected: (barber) {
         setState(() {
           final pb = PocketBaseService();
-          if (!pb.isAdmin && _currentIndex == 4) _currentIndex = 1;
           if (!pb.canAccessInventory && _currentIndex == 2) _currentIndex = 1;
           if (!pb.canViewReports && _currentIndex == 0) _currentIndex = 1;
         });
@@ -41,6 +40,19 @@ class _MainShellState extends State<MainShell> {
   }
 
   void _onTabSelected(int index) {
+    if (index == 4) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => AiAssistantScreen(
+            onNavigateToTab: (tabIndex) {
+              Navigator.of(context).pop();
+              _onTabSelected(tabIndex);
+            },
+          ),
+        ),
+      );
+      return;
+    }
     setState(() => _currentIndex = index);
     if (index == 0) {
       _dashboardKey.currentState?.reloadMetrics();
@@ -62,7 +74,6 @@ class _MainShellState extends State<MainShell> {
 
     // Sanitize current index according to permissions
     int safeIndex = _currentIndex;
-    if (!isAdmin && safeIndex == 4) safeIndex = 1;
     if (!canAccessInventory && safeIndex == 2) safeIndex = 1;
     if (!canViewReports && safeIndex == 0) safeIndex = 1;
 
@@ -86,9 +97,6 @@ class _MainShellState extends State<MainShell> {
                 CashRegisterScreen(
                   key: _cashRegisterKey,
                   onNavigateToPos: () => _onTabSelected(1),
-                ),
-                AiAssistantScreen(
-                  onNavigateToTab: _onTabSelected,
                 ),
               ],
             ),

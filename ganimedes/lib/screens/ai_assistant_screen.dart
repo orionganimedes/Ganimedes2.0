@@ -1,9 +1,7 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../services/ai_chat_service.dart';
 import '../services/pocketbase_service.dart';
-import '../utils/device_breakpoints.dart';
 
 enum MessageType {
   text,
@@ -625,71 +623,41 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
         ? userMap['shift'] as String
         : 'Turno Mañana';
 
-    final isKeyboardOpen = DeviceBreakpoints.isKeyboardOpen(context);
-    final isCompact = DeviceBreakpoints.isLandscapeCompact(context);
-    final bottomInset = MediaQuery.paddingOf(context).bottom;
-
-    // Espacio de seguridad inferior para garantizar que el scroll no quede tapado
-    final double listBottomPadding = isKeyboardOpen
-        ? 80.0
-        : (isCompact ? 116.0 : (bottomInset > 0 ? bottomInset + 148.0 : 158.0));
-
-    // Posicionamiento de la barra de entrada flotante justo encima del FloatingDock
-    final double inputBottom = isKeyboardOpen
-        ? 8.0
-        : (isCompact ? 52.0 : (bottomInset > 0 ? bottomInset + 72.0 : 80.0));
-
     return Scaffold(
       backgroundColor: const Color(0xFF0B1326),
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: SafeArea(
-        top: false,
-        bottom: false,
-        child: Stack(
+        child: Column(
           children: [
-            // Contenido Principal (Header + Status + Lista de Mensajes)
-            Positioned.fill(
-              child: Column(
-                children: [
-                  // Sub-Header Superior de Copilot IA
-                  _buildHeaderCard(shift, barberName, chair),
-
-                  // Barra de estado de conexión y PocketBase
-                  _buildStatusRow(),
-
-                  // Lista de Mensajes con clearance inferior perfecto
-                  Expanded(
-                    child: Center(
-                      child: Container(
-                        constraints: const BoxConstraints(maxWidth: 860),
-                        child: ListView.builder(
-                          controller: _scrollController,
-                          padding: EdgeInsets.fromLTRB(16, 8, 16, listBottomPadding),
-                          itemCount: _messages.length,
-                          itemBuilder: (context, index) {
-                            final msg = _messages[index];
-                            return _buildMessageItem(msg);
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            // Barra Flotante de Sugerencias e Input posicionada limpiamente sobre el dock
-            Positioned(
-              bottom: inputBottom,
-              left: 16,
-              right: 16,
-              child: Align(
-                alignment: Alignment.bottomCenter,
+            _buildHeaderCard(shift, barberName, chair),
+            _buildStatusRow(),
+            Expanded(
+              child: Center(
                 child: Container(
-                  constraints: const BoxConstraints(maxWidth: 760),
-                  child: _buildFloatingInputBar(context, isCompact, isKeyboardOpen),
+                  constraints: const BoxConstraints(maxWidth: 860),
+                  child: ListView.builder(
+                    controller: _scrollController,
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                    itemCount: _messages.length,
+                    itemBuilder: (context, index) => _buildMessageItem(_messages[index]),
+                  ),
                 ),
               ),
+            ),
+            if (!_isSending)
+              SizedBox(
+                height: 42,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  itemCount: _quickSuggestions.length,
+                  separatorBuilder: (_, __) => const SizedBox(width: 6),
+                  itemBuilder: (context, index) => _buildSuggestionChip(_quickSuggestions[index]),
+                ),
+              ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+              child: _buildInputRow(),
             ),
           ],
         ),
@@ -1836,185 +1804,110 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
     );
   }
 
-  Widget _buildFloatingInputBar(
-    BuildContext context,
-    bool isCompact,
-    bool isKeyboardOpen,
-  ) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        // Chips de sugerencia rápida (visibles cuando el teclado no está ocupando espacio)
-        if (!isKeyboardOpen && !_isSending) ...[
+  Widget _buildSuggestionChip(String suggestion) {
+    return InkWell(
+      onTap: () => _sendMessage(suggestion),
+      borderRadius: BorderRadius.circular(16),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: const Color(0xFF141C2B).withValues(alpha: 0.92),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: const Color(0xFF24344D)),
+          boxShadow: const [
+            BoxShadow(color: Color(0x33000000), blurRadius: 6, offset: Offset(0, 2)),
+          ],
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(Icons.chat_bubble_outline_rounded, color: Color(0xFF38BDF8), size: 13),
+            const SizedBox(width: 6),
+            Text(
+              suggestion,
+              style: const TextStyle(color: Color(0xFFCBD5E1), fontSize: 11, fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInputRow() {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(6, 4, 6, 4),
+      decoration: BoxDecoration(
+        color: const Color(0xFF131D2E).withValues(alpha: 0.94),
+        borderRadius: BorderRadius.circular(28),
+        border: Border.all(color: const Color(0xFF283B55), width: 1.2),
+        boxShadow: const [
+          BoxShadow(color: Color(0x66000000), blurRadius: 24, offset: Offset(0, 8)),
+        ],
+      ),
+      child: Row(
+        children: [
           Container(
-            height: 34,
-            margin: const EdgeInsets.only(bottom: 8),
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              itemCount: _quickSuggestions.length,
-              separatorBuilder: (context, index) => const SizedBox(width: 6),
-              itemBuilder: (context, index) {
-                final suggestion = _quickSuggestions[index];
-                return InkWell(
-                  onTap: () => _sendMessage(suggestion),
-                  borderRadius: BorderRadius.circular(16),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF141C2B).withValues(alpha: 0.92),
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: const Color(0xFF24344D)),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Color(0x33000000),
-                          blurRadius: 6,
-                          offset: Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(
-                          Icons.chat_bubble_outline_rounded,
-                          color: Color(0xFF38BDF8),
-                          size: 13,
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          suggestion,
-                          style: const TextStyle(
-                            color: Color(0xFFCBD5E1),
-                            fontSize: 11,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
+            width: 36,
+            height: 36,
+            margin: const EdgeInsets.only(left: 4),
+            decoration: BoxDecoration(
+              color: const Color(0xFF0B121E),
+              shape: BoxShape.circle,
+              border: Border.all(color: const Color(0xFF1F2E45)),
+            ),
+            child: const Icon(Icons.auto_awesome_rounded, color: Color(0xFF22D3EE), size: 18),
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: TextField(
+              controller: _inputController,
+              minLines: 1,
+              maxLines: 3,
+              textInputAction: TextInputAction.send,
+              onSubmitted: (_) => _sendMessage(),
+              style: const TextStyle(color: Colors.white, fontSize: 13.5),
+              decoration: const InputDecoration(
+                hintText: 'Pregunta a Copilot sobre ventas o inventario...',
+                hintStyle: TextStyle(color: Color(0xFF64748B), fontSize: 13),
+                isDense: true,
+                contentPadding: EdgeInsets.symmetric(horizontal: 4, vertical: 10),
+                border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+              ),
+            ),
+          ),
+          const SizedBox(width: 6),
+          Container(
+            width: 38,
+            height: 38,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: _isSending
+                    ? [const Color(0xFF334155), const Color(0xFF334155)]
+                    : [const Color(0xFF06B6D4), const Color(0xFF0284C7)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              shape: BoxShape.circle,
+              boxShadow: _isSending
+                  ? null
+                  : [BoxShadow(color: const Color(0xFF06B6D4).withValues(alpha: 0.45), blurRadius: 10, offset: const Offset(0, 2))],
+            ),
+            child: IconButton(
+              padding: EdgeInsets.zero,
+              onPressed: _isSending ? null : () => _sendMessage(),
+              icon: _isSending
+                  ? const SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                    )
+                  : const Icon(Icons.arrow_upward_rounded, color: Colors.white, size: 20),
             ),
           ),
         ],
-
-        // Contenedor Flotante del Input
-        ClipRRect(
-          borderRadius: BorderRadius.circular(28),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(6, 4, 6, 4),
-              decoration: BoxDecoration(
-                color: const Color(0xFF131D2E).withValues(alpha: 0.94),
-                borderRadius: BorderRadius.circular(28),
-                border: Border.all(
-                  color: const Color(0xFF283B55),
-                  width: 1.2,
-                ),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color(0x66000000),
-                    blurRadius: 24,
-                    offset: Offset(0, 8),
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    width: 36,
-                    height: 36,
-                    margin: const EdgeInsets.only(left: 4),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF0B121E),
-                      shape: BoxShape.circle,
-                      border: Border.all(color: const Color(0xFF1F2E45)),
-                    ),
-                    child: const Icon(
-                      Icons.auto_awesome_rounded,
-                      color: Color(0xFF22D3EE),
-                      size: 18,
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: TextField(
-                      controller: _inputController,
-                      minLines: 1,
-                      maxLines: 3,
-                      textInputAction: TextInputAction.send,
-                      onSubmitted: (_) => _sendMessage(),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 13.5,
-                      ),
-                      decoration: const InputDecoration(
-                        hintText: 'Pregunta a Copilot sobre ventas o inventario...',
-                        hintStyle: TextStyle(
-                          color: Color(0xFF64748B),
-                          fontSize: 13,
-                        ),
-                        isDense: true,
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 4,
-                          vertical: 10,
-                        ),
-                        border: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 6),
-                  Container(
-                    width: 38,
-                    height: 38,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: _isSending
-                            ? [const Color(0xFF334155), const Color(0xFF334155)]
-                            : [const Color(0xFF06B6D4), const Color(0xFF0284C7)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      shape: BoxShape.circle,
-                      boxShadow: _isSending
-                          ? null
-                          : [
-                              BoxShadow(
-                                color: const Color(0xFF06B6D4).withValues(alpha: 0.45),
-                                blurRadius: 10,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
-                    ),
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      onPressed: _isSending ? null : () => _sendMessage(),
-                      icon: _isSending
-                          ? const SizedBox(
-                              width: 16,
-                              height: 16,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: Colors.white,
-                              ),
-                            )
-                          : const Icon(
-                              Icons.arrow_upward_rounded,
-                              color: Colors.white,
-                              size: 20,
-                            ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
